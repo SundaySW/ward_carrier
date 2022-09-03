@@ -24,6 +24,7 @@ class DCMotor{
     using Collable = std::function<void (DCMotor* motor)>;
 public:
     Collable callBackOnEvent;
+    Collable callBackOnStep;
 
     enum MOTOR_DIRECTION{
         BACKWARDS = 0,
@@ -81,6 +82,21 @@ public:
         }
     }
 
+    void slowDown(uint8_t value){
+
+    }
+    void fullSpeed(){
+
+    }
+
+    [[nodiscard]] inline bool isMotorMoving() const {
+        return motorMoving;
+    }
+
+    inline void move(MOTOR_DIRECTION dir){
+
+    }
+
     inline void changeDirection(){
         setDirection(currentDirection ? BACKWARDS : FORWARD);
     }
@@ -125,13 +141,13 @@ private:
         motorMoving = true;
         regValueCalc();
         if(direction){
-            R_EN.setValue(LOW);
-            L_EN.setValue(LOW);
+            R_EN.setValue(HIGH);
+            L_EN.setValue(HIGH);
             HAL_TIM_PWM_Start_IT(htim, timChannel_l);
         }else{
             R_EN.setValue(HIGH);
             L_EN.setValue(HIGH);
-            HAL_TIM_PWM_Start_IT(htim, timChannel_l);
+            HAL_TIM_PWM_Start_IT(htim, timChannel_r);
         }
     }
 
