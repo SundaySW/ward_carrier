@@ -9,8 +9,8 @@ uint32_t adc_value_left_param2 = 0;
 uint32_t adc_value_right_param1 = 0;
 uint32_t adc_value_right_param2 = 0;
 
-uint32_t L_HALL_values[3] = {0,};
-uint32_t R_HALL_values[3] = {0,};
+uint32_t L_HALL_values[2] = {0,};
+uint32_t R_HALL_values[2] = {0,};
 
 extern "C"{
     Button btn_fwrd = Button(BTN_FRWD, BTN_FWD_Pin);
@@ -20,9 +20,8 @@ extern "C"{
     Ward_Carrier wardCarrier;
 
     void initDevice(){
-        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, 3);
-        HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, 3);
-
+        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
+        HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
         wardCarrier.initDevice();
     }
 

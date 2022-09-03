@@ -10,8 +10,8 @@ extern uint32_t adc_value_left_param2;
 extern uint32_t adc_value_right_param1;
 extern uint32_t adc_value_right_param2;
 
-extern uint32_t L_HALL_values[3];
-extern uint32_t R_HALL_values[3];
+extern uint32_t L_HALL_values[2];
+extern uint32_t R_HALL_values[2];
 
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;

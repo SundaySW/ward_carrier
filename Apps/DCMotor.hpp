@@ -9,14 +9,14 @@
 
 struct MotorCfg
 {
-    float Vmin;
-    float Vmax;
-    float A;
+    int Vmin;
+    int Vmax;
+    int A;
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_L;
     uint32_t timChannel_R;
-    uint32_t * adc_value_param1;
-    uint32_t * adc_value_param2;
+    uint32_t *adc_value_param1;
+    uint32_t *adc_value_param2;
 };
 
 class DCMotor{
@@ -66,7 +66,7 @@ public:
         else currentStepPP();
     }
 
-    float getCurrent() const {
+    int getCurrent() const {
         return current;
     }
 
@@ -89,12 +89,12 @@ public:
 
     }
 
-    [[nodiscard]] inline bool isMotorMoving() const {
+    [[nodiscard]] inline bool isMotorMoving() const{
         return motorMoving;
     }
 
     inline void move(MOTOR_DIRECTION dir){
-
+        startMotor(dir);
     }
 
     inline void changeDirection(){
@@ -112,10 +112,11 @@ private:
     MOTOR_IOS R_PWM;
     MOTOR_IOS L_PWM;
 
-    float V = 0.0f;
-    float Vmin;
-    float Vmax;
-    float current;
+    int V = 0;
+    int Vmin;
+    int Vmax;
+    int A;
+    int current;
 
     int currentStep = 0;
     int accel_step = 0;
@@ -161,15 +162,16 @@ private:
             int buf = (int) (1000000 / V);
             if(buf > 0 && buf < 65535){
                 __HAL_TIM_SET_AUTORELOAD(htim, buf);
-                __HAL_TIM_SET_COMPARE(htim, timChannel, buf/2);
+                __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
+                __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
             }
         }
     }
 
     inline void setDirection(MOTOR_DIRECTION newDirection){
         currentDirection = newDirection;
-        if(directionInverted) direction.setValue(LOGIC_LEVEL((currentDirection ? BACKWARDS : FORWARD)));
-        else direction.setValue(LOGIC_LEVEL(currentDirection));
+//        if(directionInverted) direction.setValue(LOGIC_LEVEL((currentDirection ? BACKWARDS : FORWARD)));
+//        else direction.setValue(LOGIC_LEVEL(currentDirection));
     }
 
     inline void reCalcSpeed(){
@@ -185,22 +187,12 @@ private:
                     mode = MODE::CONST;
                 }else
                     V += A;
-//                  V += A / abs(V);
-                if (accel_step >= stepsToGo / 2)
-                {
-                    mode = MODE::DECCEL;
-                    break;
-                }
                 accel_step++;
             }
                 break;
 
             case MODE::CONST:
             {
-                if (currentStep + accel_step >= stepsToGo) {
-                    mode = MODE::DECCEL;
-//                    event = EVENT_CSS;
-                }
             }
                 break;
 
@@ -211,10 +203,8 @@ private:
                     stopMotor();
                     mode = MODE::IDLE;
                     event = EVENT_STOP;
-//                  changeDirection();
                     break;
                 }else{
-//                  V -= A/abs(V);
                     V -= A;
                     if (V < Vmin) V = Vmin;
                     accel_step--;
@@ -225,11 +215,9 @@ private:
             default:
                 break;
         }
-
         if (mode == ACCEL || mode == CONST || mode == DECCEL)
             currentStepPP();
     }
-
 };
 
 #endif //WARD_CARRIER_DCMOTOR_HPP
