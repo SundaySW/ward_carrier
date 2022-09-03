@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Lenovo/CLionProjects/ward_carrier2/Ext_libs
+# Install script for directory: C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
