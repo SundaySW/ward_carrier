@@ -15,8 +15,6 @@ struct MotorCfg
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_L;
     uint32_t timChannel_R;
-    uint32_t *adc_value_param1;
-    uint32_t *adc_value_param2;
 };
 
 class DCMotor{
@@ -52,8 +50,6 @@ public:
         htim = config.htim;
         timChannel_l = config.timChannel_L;
         timChannel_r = config.timChannel_R;
-        adc_value_f = config.adc_value_param1;
-        adc_value_r = config.adc_value_param2;
         callBackOnEvent = std::move(incomeFunc);
     }
 
@@ -80,6 +76,10 @@ public:
             event = EVENT_STOP;
             callBackOnEvent(this);
         }
+    }
+
+    inline bool isMyTimer(TIM_HandleTypeDef *income_htim) const{
+        return htim == income_htim;
     }
 
     void slowDown(uint8_t value){

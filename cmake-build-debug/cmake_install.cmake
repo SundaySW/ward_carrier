@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Lenovo/CLionProjects/ward_carrier
+# Install script for directory: C:/Users/outlaw/CLionProjects/ward_carrier
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/cmake_install.cmake")
+  include("C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/cmake_install.cmake")
+  include("C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

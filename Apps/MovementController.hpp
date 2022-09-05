@@ -4,7 +4,6 @@
 
 #ifndef WARD_CARRIER_MOVEMENTCONTROLLER_HPP
 #define WARD_CARRIER_MOVEMENTCONTROLLER_HPP
-
 extern uint32_t adc_value_left_param1;
 extern uint32_t adc_value_left_param2;
 extern uint32_t adc_value_right_param1;
@@ -12,7 +11,6 @@ extern uint32_t adc_value_right_param2;
 
 extern uint32_t L_HALL_values[2];
 extern uint32_t R_HALL_values[2];
-
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;
     enum DEVICE_DIRECTION{
@@ -20,26 +18,33 @@ class MovementController{
         STRAIGHT = 1,
     };
 public:
-    void initMotors(){
+    void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
         cfgLeft.A = 30;
         cfgLeft.Vmax = 300;
-        cfgLeft.htim = &htim3;
+        cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
-        cfgLeft.adc_value_param1 = &adc_value_left_param1;
-        cfgLeft.adc_value_param2 = &adc_value_left_param2;
         left_motor.init(cfgLeft, [this](DCMotor* m){OnMotorEvent(m);});
 
         MotorCfg cfgRight{};
         cfgRight.A = 30;
         cfgRight.Vmax = 300;
-        cfgRight.htim = &htim4;
+        cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;
-        cfgRight.adc_value_param1 = &adc_value_right_param1;
-        cfgRight.adc_value_param2 = &adc_value_right_param2;
         right_motor.init(cfgRight, [this](DCMotor* m){OnMotorEvent(m);});
+    }
+
+    void initADCSensors(uint32_t *adc_l_p1, uint32_t *adc_l_p2, uint32_t *adc_r_p1, uint32_t *adc_r_p2){
+
+    }
+
+    template<uint8_t N>
+    constexpr void initHALLSensors(uint32_t(&hall_l)[N], uint32_t (&hall_r)[N]){
+        l_hall_values = hall_l;
+        r_hall_values = hall_r;
+        hall_values_size = N;
     }
 
     void OnMotorEvent(DCMotor *motor){
@@ -88,8 +93,16 @@ public:
         left_motor.stopMotor();
     }
 
+    void motor_refresh(TIM_HandleTypeDef *check_htim) {
+        if(right_motor.isMyTimer(check_htim)) right_motor.motor_OnTimer();
+        else if(left_motor.isMyTimer(check_htim)) left_motor.motor_OnTimer();
+    }
+
 protected:
 private:
+    uint32_t* l_hall_values;
+    uint32_t* r_hall_values;
+    uint8_t hall_values_size;
     DEVICE_DIRECTION currentDirection;
     MOTOR_PIN R_REN_PIN = MOTOR_PIN(R_EN, R_R_EN_GPIO_Port, R_R_EN_Pin);
     MOTOR_PIN R_LEN_PIN = MOTOR_PIN(L_EN, R_L_EN_GPIO_Port, R_L_EN_Pin);

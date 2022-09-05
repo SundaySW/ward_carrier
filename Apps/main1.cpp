@@ -22,7 +22,7 @@ extern "C"{
     void initDevice(){
         HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
         HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
-        wardCarrier.initDevice();
+        wardCarrier.initDevice(&htim3, &htim4);
     }
 
     void EXTI_clear_enable(){
@@ -66,6 +66,22 @@ extern "C"{
             default:
                 break;
         }
+    }
+
+    void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+    {
+        if(htim->Instance == TIM1){
+            wardCarrier.update();
+        }
+        if(htim->Instance == TIM3){
+    //        HAL_IWDG_Refresh(&hiwdg);
+        }
+    }
+
+    void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+    {
+        if((htim->Instance == TIM3) || (htim->Instance == TIM4))
+            wardCarrier.motor_refresh(htim);
     }
 
     void while1_in_mainCpp(){

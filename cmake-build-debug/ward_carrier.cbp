@@ -8,54 +8,54 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\Drivers\;CMake Files\Ext_libs\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-hex">
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier-hex"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier-hex"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/ward_carrier.elf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/ward_carrier.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Apps"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -65,31 +65,31 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier/fast">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/ward_carrier.elf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/ward_carrier.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Apps"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -99,46 +99,46 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier/fast"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier/fast"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-bin">
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier-bin"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 ward_carrier-bin"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-Drivers">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/ward_carrier-Drivers.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/ward_carrier-Drivers.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -148,26 +148,26 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 ward_carrier-Drivers"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 ward_carrier-Drivers"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-Drivers/fast">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/ward_carrier-Drivers.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/ward_carrier-Drivers.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -177,29 +177,29 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 ward_carrier-Drivers/fast"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 ward_carrier-Drivers/fast"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-Ext_libs">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/ward_carrier-Ext_libs.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/ward_carrier-Ext_libs.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -209,29 +209,29 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 ward_carrier-Ext_libs"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 ward_carrier-Ext_libs"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ward_carrier-Ext_libs/fast">
-				<Option output="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/ward_carrier-Ext_libs.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs"/>
+				<Option output="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/ward_carrier-Ext_libs.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSTM32G431xx"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
-					<Add directory="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/protos_core_sa"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common"/>
+					<Add directory="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/x86_64-w64-mingw32"/>
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../include/c++/8.5.0/backward"/>
@@ -241,588 +241,588 @@
 					<Add directory="c:\mingw_64\bin\../lib/gcc/x86_64-w64-mingw32/8.5.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 ward_carrier-Ext_libs/fast"/>
-					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 ward_carrier-Ext_libs/fast"/>
+					<CompileFile command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW_64/bin/mingw32-make.exe -f &quot;C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Ext_libs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps/DCMotor.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Apps/DCMotor.hpp">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps/MovementController.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Apps/MovementController.hpp">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps/Ward_Carrier.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Apps/Ward_Carrier.hpp">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Apps/main1.cpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Apps/main1.cpp">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/adc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/adc.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/dma.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/dma.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/fdcan.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/fdcan.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/gpio.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/gpio.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/i2c.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/i2c.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/main.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/main.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/stm32g4xx_hal_conf.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/stm32g4xx_hal_conf.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/stm32g4xx_it.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/stm32g4xx_it.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Inc/tim.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Inc/tim.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/adc.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/adc.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/dma.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/dma.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/fdcan.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/fdcan.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/gpio.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/gpio.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/i2c.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/i2c.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/main.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/main.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/stm32g4xx_hal_msp.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/stm32g4xx_hal_msp.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/stm32g4xx_it.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/stm32g4xx_it.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/system_stm32g4xx.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/system_stm32g4xx.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Core/Src/tim.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Core/Src/tim.c">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armcc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armcc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armclang.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armclang.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armclang_ltm.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_armclang_ltm.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_compiler.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_compiler.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_gcc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_gcc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_iccarm.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_iccarm.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_version.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/cmsis_version.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv81mml.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv81mml.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv8mbl.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv8mbl.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv8mml.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_armv8mml.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm0.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm0.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm0plus.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm0plus.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm1.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm1.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm23.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm23.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm3.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm3.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm33.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm33.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm35p.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm35p.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm4.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm4.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm7.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_cm7.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_sc000.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_sc000.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_sc300.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/core_sc300.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/mpu_armv7.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/mpu_armv7.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/mpu_armv8.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/mpu_armv8.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMSIS/Include/tz_context.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMSIS/Include/tz_context.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_fdcan.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_fdcan.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_adc.h">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_adc.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO/Button.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO/Button.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/IO/PIN.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/IO/PIN.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/25aa02uid.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/25aa02uid.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/axis.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/axis.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/position_control.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/position_control.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/stepper_pid.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/[deprecated]/stepper_pid.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/adc_param.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/adc_param.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/array.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/array.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_base.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_base.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_device.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_device.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_motor.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/axis_motor.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/base_device.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/base_device.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/brake.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/brake.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/bucky_ctrl.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/bucky_ctrl.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/buttons.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/buttons.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/calibration.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/calibration.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/can_port.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/can_port.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/can_queue.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/can_queue.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/led.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/led.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/ltc1861.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/ltc1861.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/pack2x.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/pack2x.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/port_pin.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/port_pin.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/step_driver.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/step_driver.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_base.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_base.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_dir.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_dir.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_man.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_man.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_pid.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/stepper_pid.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/xt2_common/system_def.hpp">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/xt2_common/system_def.hpp">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c.obj">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/startup_stm32g431xx.s">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/startup_stm32g431xx.s">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/CMakeLists.txt">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/cmake/utils.cmake">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/cmake/utils.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Drivers/CMakeLists.txt">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Drivers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Drivers\"/>
 		</Unit>
-		<Unit filename="C:/Users/Lenovo/CLionProjects/ward_carrier/Ext_libs/CMakeLists.txt">
+		<Unit filename="C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Ext_libs\"/>
 		</Unit>
 	</Project>

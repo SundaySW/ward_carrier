@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\installs\CLion 2020.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\installs\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Lenovo\CLionProjects\ward_carrier
+CMAKE_SOURCE_DIR = C:\Users\outlaw\CLionProjects\ward_carrier
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Lenovo\CLionProjects\ward_carrier\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\outlaw\CLionProjects\ward_carrier\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/depend.make
@@ -66,10 +66,10 @@ Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/build: ward_carrier-Ext_libs
 .PHONY : Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/build
 
 Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/clean:
-	cd /d C:\Users\Lenovo\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs && $(CMAKE_COMMAND) -P CMakeFiles\ward_carrier-Ext_libs.dir\cmake_clean.cmake
+	cd /d C:\Users\outlaw\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs && $(CMAKE_COMMAND) -P CMakeFiles\ward_carrier-Ext_libs.dir\cmake_clean.cmake
 .PHONY : Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/clean
 
 Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Lenovo\CLionProjects\ward_carrier C:\Users\Lenovo\CLionProjects\ward_carrier\Ext_libs C:\Users\Lenovo\CLionProjects\ward_carrier\cmake-build-debug C:\Users\Lenovo\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs C:\Users\Lenovo\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs\CMakeFiles\ward_carrier-Ext_libs.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\outlaw\CLionProjects\ward_carrier C:\Users\outlaw\CLionProjects\ward_carrier\Ext_libs C:\Users\outlaw\CLionProjects\ward_carrier\cmake-build-debug C:\Users\outlaw\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs C:\Users\outlaw\CLionProjects\ward_carrier\cmake-build-debug\Ext_libs\CMakeFiles\ward_carrier-Ext_libs.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/depend
 
