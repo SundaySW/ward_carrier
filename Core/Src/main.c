@@ -55,8 +55,7 @@
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 extern void while1_in_mainCpp();
-extern void EXTI_clear_enable();
-extern void initDevice();
+extern void initPerf();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -102,9 +101,9 @@ int main(void)
   MX_TIM3_Init();
   MX_DMA_Init();
   MX_TIM8_Init();
+  MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
-    EXTI_clear_enable();
-    initDevice();
+    initPerf();
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -66,27 +66,16 @@ public:
         return current;
     }
 
-    inline void stopMotor(){
-        if(motorMoving){
-            HAL_TIM_PWM_Stop_IT(htim, timChannel_l);
-            HAL_TIM_PWM_Stop_IT(htim, timChannel_r);
-            L_EN.setValue(LOW);
-            motorMoving = false;
-            mode = MODE::IDLE;
-            event = EVENT_STOP;
-            callBackOnEvent(this);
-        }
-    }
-
     inline bool isMyTimer(TIM_HandleTypeDef *income_htim) const{
         return htim == income_htim;
     }
 
-    void slowDown(uint8_t value){
-
+    void slowDown(uint16_t value = 0){
+        mode = DECCEL;
     }
-    void fullSpeed(){
 
+    void fullSpeed(){
+        mode = ACCEL;
     }
 
     [[nodiscard]] inline bool isMotorMoving() const{
@@ -94,15 +83,19 @@ public:
     }
 
     inline void move(MOTOR_DIRECTION dir){
-        startMotor(dir);
-    }
-
-    inline void changeDirection(){
-        setDirection(currentDirection ? BACKWARDS : FORWARD);
+        if(motorMoving){
+            if(dir != currentDirection) slowDown();
+        }else{
+            startMotor(dir);
+        }
     }
 
     [[nodiscard]] inline MOTOR_EVENT getEvent() const {
         return event;
+    }
+
+    void forcedStop(){
+        stopMotor();
     }
 
 protected:
@@ -117,24 +110,21 @@ private:
     int Vmax;
     int A;
     int current;
-
     int currentStep = 0;
-    int accel_step = 0;
 
     MOTOR_DIRECTION currentDirection = FORWARD;
     MODE mode = IDLE;
     MOTOR_EVENT event = EVENT_STOP;
     bool motorMoving = false;
     bool accelerationMode = false;
-    bool directionInverted = false;
 
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_l;
     uint32_t timChannel_r;
 
     inline void startMotor(MOTOR_DIRECTION direction){
-        accel_step = 0;
         currentStep = 0;
+        currentDirection = direction;
         mode = MODE::ACCEL;
         motorMoving = true;
         regValueCalc();
@@ -149,6 +139,19 @@ private:
         }
     }
 
+    inline void stopMotor(){
+        if(motorMoving){
+            HAL_TIM_PWM_Stop_IT(htim, timChannel_l);
+            HAL_TIM_PWM_Stop_IT(htim, timChannel_r);
+            L_EN.setValue(LOW);
+            R_EN.setValue(LOW);
+            motorMoving = false;
+            mode = MODE::IDLE;
+            event = EVENT_STOP;
+            callBackOnEvent(this);
+        }
+    }
+
     inline void currentStepPP(){
         currentStep++;
         callBackOnStep(this);
@@ -156,19 +159,13 @@ private:
 
     inline void regValueCalc(){
         if(V > 0){
-            int buf = (int) (1000000 / V);
+            int buf = (int)(1000000 / V);
             if(buf > 0 && buf < 65535){
                 __HAL_TIM_SET_AUTORELOAD(htim, buf);
                 __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
                 __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
             }
         }
-    }
-
-    inline void setDirection(MOTOR_DIRECTION newDirection){
-        currentDirection = newDirection;
-//        if(directionInverted) direction.setValue(LOGIC_LEVEL((currentDirection ? BACKWARDS : FORWARD)));
-//        else direction.setValue(LOGIC_LEVEL(currentDirection));
     }
 
     inline void reCalcSpeed(){
@@ -183,25 +180,20 @@ private:
                 mode = MODE::CONST;
             }else
                 V += A;
-            accel_step++;
-                break;
+            break;
 
             case MODE::CONST:
                 break;
 
             case MODE::DECCEL:
-            if (accel_step <= 0)
+            if (V <= 0)
             {
+                V = 0;
                 stopMotor();
-                mode = MODE::IDLE;
-                event = EVENT_STOP;
                 break;
-            }else{
+            }else
                 V -= A;
-                if (V < Vmin) V = Vmin;
-                accel_step--;
-            }
-                break;
+            break;
 
             default:
                 break;

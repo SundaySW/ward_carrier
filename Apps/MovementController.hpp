@@ -4,10 +4,6 @@
 
 #ifndef WARD_CARRIER_MOVEMENTCONTROLLER_HPP
 #define WARD_CARRIER_MOVEMENTCONTROLLER_HPP
-extern uint32_t adc_value_left_param1;
-extern uint32_t adc_value_left_param2;
-extern uint32_t adc_value_right_param1;
-extern uint32_t adc_value_right_param2;
 
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;
@@ -36,7 +32,10 @@ public:
 
     void initADCSensors(uint32_t *adc_l_p1, uint32_t *adc_l_p2, uint32_t *adc_r_p1, uint32_t *adc_r_p2)
     {
-
+        adc_l_v1 = adc_l_p1;
+        adc_l_v2 = adc_l_p2;
+        adc_r_v1 = adc_r_p1;
+        adc_r_v2 = adc_r_p2;
     }
 
     template<uint8_t N>
@@ -51,9 +50,7 @@ public:
     }
 
     void OnMotorStep(DCMotor *motor){
-        if(currentDirection){
-
-        }
+        if(currentDirection){}
     }
 
     void moveForward(){
@@ -70,16 +67,24 @@ public:
 
     void turnLeft(){
         currentDirection = TURN;
-        if(left_motor.isMotorMoving())
-            left_motor.slowDown(10);
-        else left_motor.move(DCMotor::FORWARD);
+        if(right_motor.isMotorMoving()){
+            if(left_motor.isMotorMoving()) left_motor.slowDown();
+            else right_motor.move(DCMotor::FORWARD);
+        }else{
+            right_motor.move(DCMotor::FORWARD);
+            left_motor.move(DCMotor::BACKWARDS);
+        }
     }
 
     void turnRight(){
         currentDirection = TURN;
-        if(right_motor.isMotorMoving())
-            right_motor.slowDown(10);
-        else right_motor.move(DCMotor::FORWARD);
+        if(left_motor.isMotorMoving()){
+            if(right_motor.isMotorMoving()) right_motor.slowDown();
+            else left_motor.move(DCMotor::FORWARD);
+        }else{
+            left_motor.move(DCMotor::FORWARD);
+            right_motor.move(DCMotor::BACKWARDS);
+        }
     }
 
     void straightDirection(){
@@ -88,8 +93,16 @@ public:
     }
 
     void stop(){
-        right_motor.stopMotor();
-        left_motor.stopMotor();
+        right_motor.slowDown();
+        left_motor.slowDown();
+    }
+
+    /**
+     * @brief stop PWM generation. To normally stop use slowDown()
+     */
+    void carrierForcedStop(){
+        left_motor.forcedStop();
+        right_motor.forcedStop();
     }
 
     void motor_refresh(TIM_HandleTypeDef *check_htim) {
