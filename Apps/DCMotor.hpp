@@ -132,9 +132,6 @@ private:
     uint32_t timChannel_l;
     uint32_t timChannel_r;
 
-    uint32_t * adc_value_f;
-    uint32_t * adc_value_r;
-
     inline void startMotor(MOTOR_DIRECTION direction){
         accel_step = 0;
         currentStep = 0;
@@ -179,36 +176,30 @@ private:
         switch (mode)
         {
             case MODE::ACCEL:
+            if (V >= Vmax)
             {
-                if (V >= Vmax)
-                {
-                    V = Vmax;
-                    event = EVENT_CSS;
-                    mode = MODE::CONST;
-                }else
-                    V += A;
-                accel_step++;
-            }
+                V = Vmax;
+                event = EVENT_CSS;
+                mode = MODE::CONST;
+            }else
+                V += A;
+            accel_step++;
                 break;
 
             case MODE::CONST:
-            {
-            }
                 break;
 
             case MODE::DECCEL:
+            if (accel_step <= 0)
             {
-                if (accel_step <= 0)
-                {
-                    stopMotor();
-                    mode = MODE::IDLE;
-                    event = EVENT_STOP;
-                    break;
-                }else{
-                    V -= A;
-                    if (V < Vmin) V = Vmin;
-                    accel_step--;
-                }
+                stopMotor();
+                mode = MODE::IDLE;
+                event = EVENT_STOP;
+                break;
+            }else{
+                V -= A;
+                if (V < Vmin) V = Vmin;
+                accel_step--;
             }
                 break;
 

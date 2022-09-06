@@ -27,8 +27,7 @@ public:
     Ward_Carrier& operator=(Ward_Carrier &) = delete;
     Ward_Carrier() = default;
 
-    void initDevice(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
-        movementController.initMotors(htim_l, htim_r);
+    void initDevice(){
     }
 
     void frwd_btn_action(bool state){
@@ -56,8 +55,12 @@ public:
         movementController.motor_refresh(htim);
     }
 
+    MovementController& getMovController(){
+        return movementController;
+    }
 private:
     MovementController movementController;
+
 };
 
 

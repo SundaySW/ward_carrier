@@ -22,7 +22,9 @@ extern "C"{
     void initDevice(){
         HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
         HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
-        wardCarrier.initDevice(&htim3, &htim4);
+        wardCarrier.initDevice();
+        wardCarrier.getMovController().initMotors(&htim3, &htim4);
+        wardCarrier.getMovController().initHALLSensors(L_HALL_values, R_HALL_values);
     }
 
     void EXTI_clear_enable(){

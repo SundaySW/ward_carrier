@@ -9,8 +9,6 @@ extern uint32_t adc_value_left_param2;
 extern uint32_t adc_value_right_param1;
 extern uint32_t adc_value_right_param2;
 
-extern uint32_t L_HALL_values[2];
-extern uint32_t R_HALL_values[2];
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;
     enum DEVICE_DIRECTION{
@@ -36,7 +34,8 @@ public:
         right_motor.init(cfgRight, [this](DCMotor* m){OnMotorEvent(m);});
     }
 
-    void initADCSensors(uint32_t *adc_l_p1, uint32_t *adc_l_p2, uint32_t *adc_r_p1, uint32_t *adc_r_p2){
+    void initADCSensors(uint32_t *adc_l_p1, uint32_t *adc_l_p2, uint32_t *adc_r_p1, uint32_t *adc_r_p2)
+    {
 
     }
 
@@ -103,6 +102,11 @@ private:
     uint32_t* l_hall_values;
     uint32_t* r_hall_values;
     uint8_t hall_values_size;
+    uint32_t* adc_l_v1;
+    uint32_t* adc_l_v2;
+    uint32_t* adc_r_v1;
+    uint32_t* adc_r_v2;
+
     DEVICE_DIRECTION currentDirection;
     MOTOR_PIN R_REN_PIN = MOTOR_PIN(R_EN, R_R_EN_GPIO_Port, R_R_EN_Pin);
     MOTOR_PIN R_LEN_PIN = MOTOR_PIN(L_EN, R_L_EN_GPIO_Port, R_L_EN_Pin);
