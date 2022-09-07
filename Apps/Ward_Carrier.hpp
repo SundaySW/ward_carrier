@@ -6,6 +6,7 @@
 #define WARD_WHEELER_WARDWHEELER_HPP
 
 #include <PIN.hpp>
+#include <Inc/adc.h>
 #include "main.h"
 #include "DCMotor.hpp"
 #include "Button.hpp"
@@ -48,7 +49,7 @@ public:
     }
 
     void update() {
-
+        movementController.update();
     }
 
     void motor_refresh(TIM_HandleTypeDef *htim) {

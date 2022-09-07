@@ -4,15 +4,11 @@
 
 #include "Ward_Carrier.hpp"
 
-uint32_t adc_value_l_p1 = 0;
-uint32_t adc_value_l_p2 = 0;
-uint32_t adc_value_r_p1 = 0;
-uint32_t adc_value_r_p2 = 0;
-
+extern "C"{
+uint32_t adc_values[4] = {0,};
 uint32_t L_HALL_values[2] = {0,};
 uint32_t R_HALL_values[2] = {0,};
 
-extern "C"{
     Ward_Carrier wardCarrier;
 
     Button btn_fwrd = Button(BTN_FRWD, BTN_FWD_Pin);
@@ -34,18 +30,28 @@ extern "C"{
         NVIC_ClearPendingIRQ(EXTI3_IRQn);
         HAL_NVIC_EnableIRQ(EXTI3_IRQn);
     }
+    inline void initADC(){
+        HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+        HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED);
+        HAL_ADC_Start(&hadc2);
+        HAL_ADCEx_MultiModeStart_DMA(&hadc1, (uint32_t*)&adc_values, sizeof(adc_values)/2);
+    }
+    inline void initHALLSensors(){
+        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
+        HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
+    }
     /**
      * @brief all chip configured specs should be managed here in one place
      *        vars for DMA are set as global in the head
      */
     void initPerf(){
         EXTI_clear_enable();
-        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
-        HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
         wardCarrier.initDevice();
         wardCarrier.getMovController().initMotors(&htim3, &htim4);
-        wardCarrier.getMovController().initHALLSensors(L_HALL_values, R_HALL_values);
-        wardCarrier.getMovController().initADCSensors(&adc_value_l_p1, &adc_value_l_p2, &adc_value_r_p1, &adc_value_r_p2);
+        initHALLSensors();
+        wardCarrier.getMovController().setHALLSensors(L_HALL_values, R_HALL_values);
+        initADC();
+        wardCarrier.getMovController().setADCSensors(adc_values);
         HAL_TIM_Base_Start_IT(&htim15);
     }
 
@@ -73,12 +79,19 @@ extern "C"{
         }
     }
 
+    void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+    {
+        if(hadc->Instance == ADC1)
+            wardCarrier.getMovController().checkCurrent();
+    }
+
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         if(htim->Instance == TIM15){
+            HAL_ADCEx_MultiModeStart_DMA(&hadc1, adc_values, sizeof(adc_values)/2);
             wardCarrier.update();
         }
-        if(htim->Instance == TIM3){
+        if(htim->Instance == TIM2){
     //        HAL_IWDG_Refresh(&hiwdg);
         }
     }

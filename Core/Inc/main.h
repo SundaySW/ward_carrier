@@ -61,9 +61,6 @@ void Error_Handler(void);
 #define BTN_RVS_Pin GPIO_PIN_1
 #define BTN_RVS_GPIO_Port GPIOF
 #define BTN_RVS_EXTI_IRQn EXTI1_IRQn
-#define BTN_FWD_Pin GPIO_PIN_10
-#define BTN_FWD_GPIO_Port GPIOG
-#define BTN_FWD_EXTI_IRQn EXTI15_10_IRQn
 #define L_L_IS_Pin GPIO_PIN_0
 #define L_L_IS_GPIO_Port GPIOA
 #define L_R_IS_Pin GPIO_PIN_1
@@ -85,6 +82,9 @@ void Error_Handler(void);
 #define L_R_EN_GPIO_Port GPIOB
 #define L_HAL_Pin GPIO_PIN_8
 #define L_HAL_GPIO_Port GPIOA
+#define BTN_FWD_Pin GPIO_PIN_10
+#define BTN_FWD_GPIO_Port GPIOA
+#define BTN_FWD_EXTI_IRQn EXTI15_10_IRQn
 #define R_HALL_Pin GPIO_PIN_15
 #define R_HALL_GPIO_Port GPIOA
 #define BTN_RIGHT_Pin GPIO_PIN_3

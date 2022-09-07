@@ -74,6 +74,10 @@ public:
         mode = DECCEL;
     }
 
+    void changeSpeed(uint32_t delta){
+        Vmax -= delta;
+    }
+
     void fullSpeed(){
         mode = ACCEL;
     }
@@ -96,6 +100,9 @@ public:
 
     void forcedStop(){
         stopMotor();
+    }
+    inline MOTOR_DIRECTION getGirection()const {
+        return currentDirection;
     }
 
 protected:

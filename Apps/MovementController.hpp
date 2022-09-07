@@ -5,6 +5,8 @@
 #ifndef WARD_CARRIER_MOVEMENTCONTROLLER_HPP
 #define WARD_CARRIER_MOVEMENTCONTROLLER_HPP
 
+#define DIFF_CRITICAL_VALUE 200
+
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;
     enum DEVICE_DIRECTION{
@@ -30,16 +32,14 @@ public:
         right_motor.init(cfgRight, [this](DCMotor* m){OnMotorEvent(m);});
     }
 
-    void initADCSensors(uint32_t *adc_l_p1, uint32_t *adc_l_p2, uint32_t *adc_r_p1, uint32_t *adc_r_p2)
-    {
-        adc_l_v1 = adc_l_p1;
-        adc_l_v2 = adc_l_p2;
-        adc_r_v1 = adc_r_p1;
-        adc_r_v2 = adc_r_p2;
+    template<uint8_t N>
+    constexpr void setADCSensors(uint32_t(&adc_values_in)[N]){
+        adc_values = adc_values_in;
+        adc_values_size = N;
     }
 
     template<uint8_t N>
-    constexpr void initHALLSensors(uint32_t(&hall_l)[N], uint32_t (&hall_r)[N]){
+    constexpr void setHALLSensors(uint32_t(&hall_l)[N], uint32_t (&hall_r)[N]){
         l_hall_values = hall_l;
         r_hall_values = hall_r;
         hall_values_size = N;
@@ -93,8 +93,46 @@ public:
     }
 
     void stop(){
-        right_motor.slowDown();
-        left_motor.slowDown();
+//        right_motor.slowDown();
+//        left_motor.slowDown();
+    }
+
+    void update(){
+        if(currentDirection == STRAIGHT){
+            checkHALLSensors();
+        }
+    }
+
+    inline void checkHALLSensors(){
+        uint32_t lAveragePulse = 0;
+        uint32_t rAveragePulse = 0;
+        for(uint8_t i = 0; i < hall_values_size; i++){
+            lAveragePulse += (uint32_t)(*l_hall_values);
+            rAveragePulse += (uint32_t)(*r_hall_values);
+        }
+        lAveragePulse /= hall_values_size;
+        rAveragePulse /= hall_values_size;
+        uint32_t diff = lAveragePulse > rAveragePulse ? lAveragePulse-rAveragePulse : rAveragePulse - lAveragePulse;
+        if(diff > DIFF_CRITICAL_VALUE){
+            if(lAveragePulse > rAveragePulse) left_motor.changeSpeed(calcSpeedDelta(diff));
+            else right_motor.changeSpeed(calcSpeedDelta(diff));
+        }
+    }
+
+    uint16_t calcSpeedDelta(uint32_t diff){
+        return 0;
+    }
+
+    inline void checkCurrent(){
+        if(adc_values_size >= 4){
+            if(right_motor.getGirection()){
+                uint16_t adc_r_1 = adc_values[0];
+                uint16_t adc_l_1 = adc_values[2];
+            }else{
+                uint16_t adc_r_2 = adc_values[1];
+                uint16_t adc_l_2 = adc_values[3];
+            }
+        }else static_assert("check adc values array size");
     }
 
     /**
@@ -115,12 +153,10 @@ private:
     uint32_t* l_hall_values;
     uint32_t* r_hall_values;
     uint8_t hall_values_size;
-    uint32_t* adc_l_v1;
-    uint32_t* adc_l_v2;
-    uint32_t* adc_r_v1;
-    uint32_t* adc_r_v2;
+    uint32_t* adc_values;
+    uint8_t adc_values_size;
 
-    DEVICE_DIRECTION currentDirection;
+    DEVICE_DIRECTION currentDirection = STRAIGHT;
     MOTOR_PIN R_REN_PIN = MOTOR_PIN(R_EN, R_R_EN_GPIO_Port, R_R_EN_Pin);
     MOTOR_PIN R_LEN_PIN = MOTOR_PIN(L_EN, R_L_EN_GPIO_Port, R_L_EN_Pin);
     MOTOR_PIN R_RPWM_PIN = MOTOR_PIN(R_PWM, R_RPWM_GPIO_Port, R_RPWM_Pin);
