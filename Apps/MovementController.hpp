@@ -93,8 +93,8 @@ public:
     }
 
     void stop(){
-//        right_motor.slowDown();
-//        left_motor.slowDown();
+        right_motor.slowDown();
+        left_motor.slowDown();
     }
 
     void update(){
@@ -125,7 +125,7 @@ public:
 
     inline void checkCurrent(){
         if(adc_values_size >= 4){
-            if(right_motor.getGirection()){
+            if(right_motor.getDirection()){
                 uint16_t adc_r_1 = adc_values[0];
                 uint16_t adc_l_1 = adc_values[2];
             }else{

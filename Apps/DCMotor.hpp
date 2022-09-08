@@ -51,6 +51,7 @@ public:
         timChannel_l = config.timChannel_L;
         timChannel_r = config.timChannel_R;
         callBackOnEvent = std::move(incomeFunc);
+        timerDividend = SystemCoreClock/(htim->Instance->PSC);
     }
 
     inline void motor_OnTimer(){
@@ -101,7 +102,7 @@ public:
     void forcedStop(){
         stopMotor();
     }
-    inline MOTOR_DIRECTION getGirection()const {
+    inline MOTOR_DIRECTION getDirection()const {
         return currentDirection;
     }
 
@@ -128,6 +129,7 @@ private:
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_l;
     uint32_t timChannel_r;
+    uint32_t timerDividend;
 
     inline void startMotor(MOTOR_DIRECTION direction){
         currentStep = 0;
@@ -161,13 +163,13 @@ private:
 
     inline void currentStepPP(){
         currentStep++;
-        callBackOnStep(this);
+//        callBackOnStep(this);
     }
 
     inline void regValueCalc(){
         if(V > 0){
-            int buf = (int)(1000000 / V);
-            if(buf > 0 && buf < 65535){
+            int buf = timerDividend / V;
+            if(buf > 0 && buf < UINT16_MAX){
                 __HAL_TIM_SET_AUTORELOAD(htim, buf);
                 __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
                 __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
