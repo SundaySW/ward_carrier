@@ -57,14 +57,12 @@ public:
     inline void motor_OnTimer(){
         if(mode == in_ERROR) return;
         if(accelerationMode) {
-            reCalcSpeed();
-            regValueCalc();
+            if (mode != CONST) {
+                reCalcSpeed();
+                regValueCalc();
+            }
         }
         else currentStepPP();
-    }
-
-    int getCurrent() const {
-        return current;
     }
 
     inline bool isMyTimer(TIM_HandleTypeDef *income_htim) const{
@@ -117,14 +115,13 @@ private:
     int Vmin;
     int Vmax;
     int A;
-    int current;
     int currentStep = 0;
 
     MOTOR_DIRECTION currentDirection = FORWARD;
     MODE mode = IDLE;
     MOTOR_EVENT event = EVENT_STOP;
     bool motorMoving = false;
-    bool accelerationMode = false;
+    bool accelerationMode = true;
 
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_l;
