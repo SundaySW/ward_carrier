@@ -114,8 +114,8 @@ public:
         rAveragePulse /= hall_values_size;
         uint32_t diff = lAveragePulse > rAveragePulse ? lAveragePulse-rAveragePulse : rAveragePulse - lAveragePulse;
         if(diff > DIFF_CRITICAL_VALUE){
-            if(lAveragePulse > rAveragePulse) left_motor.changeSpeed(calcSpeedDelta(diff));
-            else right_motor.changeSpeed(calcSpeedDelta(diff));
+            if(lAveragePulse > rAveragePulse) left_motor.speedCorrection(calcSpeedDelta(diff));
+            else right_motor.speedCorrection(calcSpeedDelta(diff));
         }
     }
 

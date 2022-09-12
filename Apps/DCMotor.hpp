@@ -7,11 +7,12 @@
 
 #include "functional"
 
+#define MAX_SPEED_RATIO 1
+#define MAX_FREQ_VALUE 500
+
 struct MotorCfg
 {
-    int Vmin;
-    int Vmax;
-    int A;
+    uint32_t mSecAccTime;
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_L;
     uint32_t timChannel_R;
@@ -22,7 +23,6 @@ class DCMotor{
     using Collable = std::function<void (DCMotor* motor)>;
 public:
     Collable callBackOnEvent;
-    Collable callBackOnStep;
 
     enum MOTOR_DIRECTION{
         BACKWARDS = 0,
@@ -45,24 +45,32 @@ public:
     }
 
     void init(MotorCfg &config, Collable incomeFunc){
-        Vmin = config.Vmin;
-        Vmax = config.Vmax;
         htim = config.htim;
         timChannel_l = config.timChannel_L;
         timChannel_r = config.timChannel_R;
         callBackOnEvent = std::move(incomeFunc);
-        timerDividend = SystemCoreClock/(htim->Instance->PSC);
+        timerFreq = SystemCoreClock / (htim->Instance->PSC);
+        timerArr = __HAL_TIM_GET_AUTORELOAD(htim);
+        speedAdderCalc(config.mSecAccTime);
+    }
+
+    void speedAdderCalc(uint32_t mSec){
+        uint32_t pulseFreq = timerFreq / timerArr;
+        float pulseCount = mSec / pulseFreq;
+        if(pulseCount > 1){
+            speedAdder = 100 / pulseCount;
+        }else{
+            static_assert("too low pulse freq");
+            speedAdder = MAX_SPEED_RATIO;
+        }
     }
 
     inline void motor_OnTimer(){
         if(mode == in_ERROR) return;
-        if(accelerationMode) {
-            if (mode != CONST) {
-                reCalcSpeed();
-                regValueCalc();
-            }
+        if (mode != CONST) {
+            reCalcSpeed();
+            regValueCalc();
         }
-        else currentStepPP();
     }
 
     inline bool isMyTimer(TIM_HandleTypeDef *income_htim) const{
@@ -73,8 +81,15 @@ public:
         mode = DECCEL;
     }
 
-    void changeSpeed(uint32_t delta){
-        Vmax -= delta;
+    void speedCorrection(float newRatioValue){
+        if(newRatioValue > 0 && newRatioValue <= MAX_SPEED_RATIO)
+            setMaxSpeedRatio(newRatioValue);
+    }
+
+    void setMaxSpeedRatio(uint32_t newValue){
+        if(maxRatio < 0) maxRatio = 0;
+        else if(maxRatio > MAX_SPEED_RATIO) maxRatio = MAX_SPEED_RATIO;
+        else maxRatio = newValue;
     }
 
     void fullSpeed(){
@@ -100,6 +115,7 @@ public:
     void forcedStop(){
         stopMotor();
     }
+
     inline MOTOR_DIRECTION getDirection()const {
         return currentDirection;
     }
@@ -111,25 +127,22 @@ private:
     MOTOR_IOS R_PWM;
     MOTOR_IOS L_PWM;
 
-    int V = 0;
-    int Vmin;
-    int Vmax;
-    int A;
-    int currentStep = 0;
+    float SpeedRatio = 0;
+    uint8_t maxRatio = MAX_SPEED_RATIO;
+    float speedAdder = 0;
 
     MOTOR_DIRECTION currentDirection = FORWARD;
     MODE mode = IDLE;
     MOTOR_EVENT event = EVENT_STOP;
     bool motorMoving = false;
-    bool accelerationMode = true;
 
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_l;
     uint32_t timChannel_r;
-    uint32_t timerDividend;
+    uint32_t timerFreq;
+    uint32_t timerArr;
 
     inline void startMotor(MOTOR_DIRECTION direction){
-        currentStep = 0;
         currentDirection = direction;
         mode = MODE::ACCEL;
         motorMoving = true;
@@ -158,20 +171,28 @@ private:
         }
     }
 
-    inline void currentStepPP(){
-        currentStep++;
-//        callBackOnStep(this);
-    }
-
-    inline void regValueCalc(){
-        if(V > 0){
-            int buf = timerDividend / V;
-            if(buf > 0 && buf < UINT16_MAX){
-                __HAL_TIM_SET_AUTORELOAD(htim, buf);
-                __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
-                __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
-            }
+    inline void regValueCalc() {
+        auto newCompareValue = (uint32_t)(timerArr * SpeedRatio);
+        if(newCompareValue > 0 && newCompareValue < UINT16_MAX){
+            __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
+            __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
         }
+
+//        auto newARRValue = (uint32_t)(MAX_FREQ_VALUE * SpeedRatio);
+//        if(newARRValue > 0 && newARRValue < UINT16_MAX){
+//            __HAL_TIM_SET_AUTORELOAD(htim, newARRValue);
+//            __HAL_TIM_SET_COMPARE(htim, timChannel_l, newARRValue/2);
+//            __HAL_TIM_SET_COMPARE(htim, timChannel_r, newARRValue/2);
+//        }
+
+//        if(V > 0){
+//            int buf = timerDividend / V;
+//            if(buf > 0 && buf < UINT16_MAX){
+//                __HAL_TIM_SET_AUTORELOAD(htim, buf);
+//                __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
+//                __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
+//            }
+//        }
     }
 
     inline void reCalcSpeed(){
@@ -179,33 +200,29 @@ private:
         switch (mode)
         {
             case MODE::ACCEL:
-            if (V >= Vmax)
-            {
-                V = Vmax;
-                event = EVENT_CSS;
-                mode = MODE::CONST;
-            }else
-                V += A;
+                SpeedRatio += speedAdder;
+                if (SpeedRatio >= maxRatio){
+                    SpeedRatio = maxRatio;
+                    event = EVENT_CSS;
+                    mode = MODE::CONST;
+                }
             break;
 
             case MODE::CONST:
                 break;
 
             case MODE::DECCEL:
-            if (V <= 0)
-            {
-                V = 0;
-                stopMotor();
-                break;
-            }else
-                V -= A;
+                SpeedRatio -= speedAdder;
+                if (SpeedRatio <= 0){
+                    SpeedRatio = 0;
+                    stopMotor();
+                    break;
+                }
             break;
 
             default:
                 break;
         }
-        if (mode == ACCEL || mode == CONST || mode == DECCEL)
-            currentStepPP();
     }
 };
 
