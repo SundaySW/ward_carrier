@@ -74,8 +74,6 @@ void Error_Handler(void);
 #define BTN_LEFT_Pin GPIO_PIN_5
 #define BTN_LEFT_GPIO_Port GPIOA
 #define BTN_LEFT_EXTI_IRQn EXTI9_5_IRQn
-#define L_LPWM_Pin GPIO_PIN_6
-#define L_LPWM_GPIO_Port GPIOA
 #define L_L_EN_Pin GPIO_PIN_7
 #define L_L_EN_GPIO_Port GPIOA
 #define L_R_EN_Pin GPIO_PIN_0
@@ -90,14 +88,16 @@ void Error_Handler(void);
 #define BTN_RIGHT_Pin GPIO_PIN_3
 #define BTN_RIGHT_GPIO_Port GPIOB
 #define BTN_RIGHT_EXTI_IRQn EXTI3_IRQn
-#define R_R_EN_Pin GPIO_PIN_4
-#define R_R_EN_GPIO_Port GPIOB
+#define L_LPWM_Pin GPIO_PIN_4
+#define L_LPWM_GPIO_Port GPIOB
 #define R_L_EN_Pin GPIO_PIN_5
 #define R_L_EN_GPIO_Port GPIOB
 #define R_LPWM_Pin GPIO_PIN_6
 #define R_LPWM_GPIO_Port GPIOB
 #define R_RPWM_Pin GPIO_PIN_7
 #define R_RPWM_GPIO_Port GPIOB
+#define R_R_EN_Pin GPIO_PIN_8
+#define R_R_EN_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 enum BTN_TYPE{
     BTN_FRWD,

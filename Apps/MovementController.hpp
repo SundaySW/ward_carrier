@@ -16,16 +16,16 @@ class MovementController{
 public:
     void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
-        cfgLeft.A = 20;
-        cfgLeft.Vmax = 3000;
+        cfgLeft.mSecAccTime = 3000;
+        cfgLeft.maxRatio = 1.0;
         cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
         left_motor.init(cfgLeft, [this](DCMotor* m){OnMotorEvent(m);});
 
         MotorCfg cfgRight{};
-        cfgRight.A = 20;
-        cfgRight.Vmax = 3000;
+        cfgRight.mSecAccTime = 3000;
+        cfgRight.maxRatio = 1.0;
         cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;

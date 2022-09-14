@@ -7,11 +7,12 @@
 
 #include "functional"
 
-#define MAX_SPEED_RATIO 1
+#define MAX_SPEED_RATIO 1.0
 #define MAX_FREQ_VALUE 500
 
 struct MotorCfg
 {
+    float maxRatio;
     uint32_t mSecAccTime;
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_L;
@@ -45,21 +46,22 @@ public:
     }
 
     void init(MotorCfg &config, Collable incomeFunc){
+        incomeCfg = config;
         htim = config.htim;
         timChannel_l = config.timChannel_L;
         timChannel_r = config.timChannel_R;
         callBackOnEvent = std::move(incomeFunc);
         timerFreq = SystemCoreClock / (htim->Instance->PSC);
         timerArr = __HAL_TIM_GET_AUTORELOAD(htim);
-        speedAdderCalc(config.mSecAccTime);
+        setMaxSpeedRatio(config.maxRatio);
     }
 
-    void speedAdderCalc(uint32_t mSec){
+    void speedAdderCalc() {
         uint32_t pulseFreq = timerFreq / timerArr;
-        float pulseCount = mSec / pulseFreq;
-        if(pulseCount > 1){
-            speedAdder = 100 / pulseCount;
-        }else{
+        float pulseCount = incomeCfg.mSecAccTime / (pulseFreq);
+        if (pulseCount > 1)
+            speedAdder = maxRatio / pulseCount;
+        else{
             static_assert("too low pulse freq");
             speedAdder = MAX_SPEED_RATIO;
         }
@@ -77,7 +79,9 @@ public:
         return htim == income_htim;
     }
 
-    void slowDown(uint16_t value = 0){
+    void slowDown(float value = 0){
+        if(value > 0 && value < maxRatio)
+            setMaxSpeedRatio(maxRatio-value);
         mode = DECCEL;
     }
 
@@ -90,9 +94,11 @@ public:
         if(maxRatio < 0) maxRatio = 0;
         else if(maxRatio > MAX_SPEED_RATIO) maxRatio = MAX_SPEED_RATIO;
         else maxRatio = newValue;
+        speedAdderCalc();
     }
 
     void fullSpeed(){
+        setMaxSpeedRatio(incomeCfg.maxRatio);
         mode = ACCEL;
     }
 
@@ -122,13 +128,14 @@ public:
 
 protected:
 private:
+    MotorCfg incomeCfg;
     MOTOR_IOS R_EN;
     MOTOR_IOS L_EN;
     MOTOR_IOS R_PWM;
     MOTOR_IOS L_PWM;
 
     float SpeedRatio = 0;
-    uint8_t maxRatio = MAX_SPEED_RATIO;
+    float maxRatio = MAX_SPEED_RATIO;
     float speedAdder = 0;
 
     MOTOR_DIRECTION currentDirection = FORWARD;
@@ -177,21 +184,11 @@ private:
             __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
             __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
         }
-
 //        auto newARRValue = (uint32_t)(MAX_FREQ_VALUE * SpeedRatio);
 //        if(newARRValue > 0 && newARRValue < UINT16_MAX){
 //            __HAL_TIM_SET_AUTORELOAD(htim, newARRValue);
 //            __HAL_TIM_SET_COMPARE(htim, timChannel_l, newARRValue/2);
 //            __HAL_TIM_SET_COMPARE(htim, timChannel_r, newARRValue/2);
-//        }
-
-//        if(V > 0){
-//            int buf = timerDividend / V;
-//            if(buf > 0 && buf < UINT16_MAX){
-//                __HAL_TIM_SET_AUTORELOAD(htim, buf);
-//                __HAL_TIM_SET_COMPARE(htim, timChannel_l, buf/2);
-//                __HAL_TIM_SET_COMPARE(htim, timChannel_r, buf/2);
-//            }
 //        }
     }
 

@@ -67,7 +67,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(L_L_EN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = L_R_EN_Pin|R_R_EN_Pin|R_L_EN_Pin;
+  GPIO_InitStruct.Pin = L_R_EN_Pin|R_L_EN_Pin|R_R_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);

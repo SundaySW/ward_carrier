@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs
+# Install script for directory: C:/Users/79162/CLionProjects/ward_carrier/Ext_libs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,6 +29,6 @@ endif()
 
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+  set(CMAKE_CROSSCOMPILING "TRUE")
 endif()
 
