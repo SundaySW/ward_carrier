@@ -6,7 +6,7 @@
 #define WARD_WHEELER_WARDWHEELER_HPP
 
 #include <PIN.hpp>
-#include <Inc/adc.h>
+#include <adc.h>
 #include "main.h"
 #include "DCMotor.hpp"
 #include "Button.hpp"
@@ -36,12 +36,14 @@ public:
         else movementController.stop();
     }
     void rvrs_btn_action(bool state){
-        if(state) movementController.moveBackwards();
-        else movementController.stop();
+//        if(state) movementController.moveBackwards();
+//        else movementController.stop();
+        if(state)movementController.moveBackwards();
     }
     void left_btn_action(bool state){
-        if(state) movementController.turnLeft();
-        else movementController.straightDirection();
+//        if(state) movementController.turnLeft();
+//        else movementController.straightDirection();
+        movementController.stop();
     }
     void right_btn_action(bool state){
         if(state) movementController.turnRight();

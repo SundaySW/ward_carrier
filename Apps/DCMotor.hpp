@@ -58,7 +58,7 @@ public:
 
     void speedAdderCalc() {
         uint32_t pulseFreq = timerFreq / timerArr;
-        float pulseCount = incomeCfg.mSecAccTime / (pulseFreq);
+        float pulseCount = incomeCfg.mSecAccTime / (float(pulseFreq)/100);
         if (pulseCount > 1)
             speedAdder = maxRatio / pulseCount;
         else{
@@ -90,7 +90,7 @@ public:
             setMaxSpeedRatio(newRatioValue);
     }
 
-    void setMaxSpeedRatio(uint32_t newValue){
+    void setMaxSpeedRatio(float newValue){
         if(maxRatio < 0) maxRatio = 0;
         else if(maxRatio > MAX_SPEED_RATIO) maxRatio = MAX_SPEED_RATIO;
         else maxRatio = newValue;
@@ -172,6 +172,7 @@ private:
             L_EN.setValue(LOW);
             R_EN.setValue(LOW);
             motorMoving = false;
+            SpeedRatio = 0;
             mode = MODE::IDLE;
             event = EVENT_STOP;
             callBackOnEvent(this);
@@ -180,7 +181,7 @@ private:
 
     inline void regValueCalc() {
         auto newCompareValue = (uint32_t)(timerArr * SpeedRatio);
-        if(newCompareValue > 0 && newCompareValue < UINT16_MAX){
+        if(newCompareValue >= 0 && newCompareValue < UINT16_MAX){
             __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
             __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
         }

@@ -310,33 +310,6 @@ Core/Src/gpio.c.s:
 	$(MAKE) -f CMakeFiles\ward_carrier.dir\build.make CMakeFiles/ward_carrier.dir/Core/Src/gpio.c.s
 .PHONY : Core/Src/gpio.c.s
 
-Core/Src/i2c.obj: Core/Src/i2c.c.obj
-
-.PHONY : Core/Src/i2c.obj
-
-# target to build an object file
-Core/Src/i2c.c.obj:
-	$(MAKE) -f CMakeFiles\ward_carrier.dir\build.make CMakeFiles/ward_carrier.dir/Core/Src/i2c.c.obj
-.PHONY : Core/Src/i2c.c.obj
-
-Core/Src/i2c.i: Core/Src/i2c.c.i
-
-.PHONY : Core/Src/i2c.i
-
-# target to preprocess a source file
-Core/Src/i2c.c.i:
-	$(MAKE) -f CMakeFiles\ward_carrier.dir\build.make CMakeFiles/ward_carrier.dir/Core/Src/i2c.c.i
-.PHONY : Core/Src/i2c.c.i
-
-Core/Src/i2c.s: Core/Src/i2c.c.s
-
-.PHONY : Core/Src/i2c.s
-
-# target to generate assembly for a file
-Core/Src/i2c.c.s:
-	$(MAKE) -f CMakeFiles\ward_carrier.dir\build.make CMakeFiles/ward_carrier.dir/Core/Src/i2c.c.s
-.PHONY : Core/Src/i2c.c.s
-
 Core/Src/main.obj: Core/Src/main.c.obj
 
 .PHONY : Core/Src/main.obj
@@ -509,9 +482,6 @@ help:
 	@echo ... Core/Src/gpio.obj
 	@echo ... Core/Src/gpio.i
 	@echo ... Core/Src/gpio.s
-	@echo ... Core/Src/i2c.obj
-	@echo ... Core/Src/i2c.i
-	@echo ... Core/Src/i2c.s
 	@echo ... Core/Src/main.obj
 	@echo ... Core/Src/main.i
 	@echo ... Core/Src/main.s

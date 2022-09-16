@@ -99,7 +99,7 @@ public:
 
     void update(){
         if(currentDirection == STRAIGHT){
-            checkHALLSensors();
+//            checkHALLSensors();
         }
     }
 

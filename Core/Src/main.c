@@ -22,7 +22,6 @@
 #include "adc.h"
 #include "dma.h"
 #include "fdcan.h"
-#include "i2c.h"
 #include "tim.h"
 #include "gpio.h"
 
@@ -94,14 +93,13 @@ int main(void)
   MX_TIM7_Init();
   MX_TIM6_Init();
   MX_TIM4_Init();
-  MX_ADC1_Init();
-  MX_ADC2_Init();
   MX_FDCAN1_Init();
-  MX_I2C2_Init();
   MX_TIM3_Init();
   MX_DMA_Init();
   MX_TIM8_Init();
   MX_TIM15_Init();
+  MX_ADC1_Init();
+  MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
     initPerf();
   /* USER CODE END 2 */
@@ -163,9 +161,7 @@ void SystemClock_Config(void)
   }
   /** Initializes the peripherals clocks
   */
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C2|RCC_PERIPHCLK_ADC12
-                              |RCC_PERIPHCLK_FDCAN;
-  PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_PCLK1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC12|RCC_PERIPHCLK_FDCAN;
   PeriphClkInit.FdcanClockSelection = RCC_FDCANCLKSOURCE_PCLK1;
   PeriphClkInit.Adc12ClockSelection = RCC_ADC12CLKSOURCE_SYSCLK;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)

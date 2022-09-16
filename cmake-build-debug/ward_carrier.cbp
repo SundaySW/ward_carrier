@@ -266,9 +266,6 @@
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Inc/gpio.h">
 			<Option target="ward_carrier"/>
 		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Inc/i2c.h">
-			<Option target="ward_carrier"/>
-		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Inc/main.h">
 			<Option target="ward_carrier"/>
 		</Unit>
@@ -291,9 +288,6 @@
 			<Option target="ward_carrier"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Src/gpio.c">
-			<Option target="ward_carrier"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Src/i2c.c">
 			<Option target="ward_carrier"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Core/Src/main.c">

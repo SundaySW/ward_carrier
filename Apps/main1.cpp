@@ -18,23 +18,23 @@ uint32_t R_HALL_values[2] = {0,};
 
     void EXTI_clear_enable(){
         __HAL_GPIO_EXTI_CLEAR_IT(BTN_LEFT_Pin);
-        NVIC_ClearPendingIRQ(EXTI9_5_IRQn);
-        HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-        __HAL_GPIO_EXTI_CLEAR_IT(BTN_RVS_Pin);
         NVIC_ClearPendingIRQ(EXTI1_IRQn);
         HAL_NVIC_EnableIRQ(EXTI1_IRQn);
+        __HAL_GPIO_EXTI_CLEAR_IT(BTN_RVS_Pin);
+        NVIC_ClearPendingIRQ(EXTI4_IRQn);
+        HAL_NVIC_EnableIRQ(EXTI4_IRQn);
         __HAL_GPIO_EXTI_CLEAR_IT(BTN_FWD_Pin);
-        NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
-        HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
-        __HAL_GPIO_EXTI_CLEAR_IT(BTN_RIGHT_Pin);
         NVIC_ClearPendingIRQ(EXTI3_IRQn);
         HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+        __HAL_GPIO_EXTI_CLEAR_IT(BTN_RIGHT_Pin);
+        NVIC_ClearPendingIRQ(EXTI0_IRQn);
+        HAL_NVIC_EnableIRQ(EXTI0_IRQn);
     }
     inline void initADC(){
-        HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
-        HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED);
-        HAL_ADC_Start(&hadc2);
-        HAL_ADCEx_MultiModeStart_DMA(&hadc1, (uint32_t*)&adc_values, sizeof(adc_values)/2);
+//        HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+//        HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED);
+//        HAL_ADC_Start(&hadc2);
+//        HAL_ADCEx_MultiModeStart_DMA(&hadc1, (uint32_t*)&adc_values, sizeof(adc_values)/2);
     }
     inline void initHALLSensors(){
         HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
@@ -54,28 +54,32 @@ uint32_t R_HALL_values[2] = {0,};
         wardCarrier.getMovController().setADCSensors(adc_values);
         HAL_TIM_Base_Start_IT(&htim15);
     }
-
+    uint32_t ff = 0;
     void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
-        switch (GPIO_Pin) {
-            case BTN_FWD_Pin:
-                wardCarrier.frwd_btn_action(btn_fwrd);
-                btn_fwrd.changeState();
-                break;
-            case BTN_RVS_Pin:
-                wardCarrier.rvrs_btn_action(btn_rvrs);
-                btn_rvrs.changeState();
-                break;
-            case BTN_LEFT_Pin:
-                wardCarrier.left_btn_action(btn_left);
-                btn_left.changeState();
-                break;
-            case BTN_RIGHT_Pin:
-                wardCarrier.right_btn_action(btn_right);
-                btn_right.changeState();
-                break;
-            default:
-                break;
+        ff++;
+        if(ff==2){
+            ff=0;
+            switch (GPIO_Pin) {
+                case BTN_FWD_Pin:
+                    wardCarrier.frwd_btn_action(btn_fwrd);
+                    btn_fwrd.changeState();
+                    break;
+                case BTN_RVS_Pin:
+                    wardCarrier.rvrs_btn_action(btn_rvrs);
+                    btn_rvrs.changeState();
+                    break;
+                case BTN_LEFT_Pin:
+                    wardCarrier.left_btn_action(btn_left);
+                    btn_left.changeState();
+                    break;
+                case BTN_RIGHT_Pin:
+                    wardCarrier.right_btn_action(btn_right);
+                    btn_right.changeState();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -88,7 +92,7 @@ uint32_t R_HALL_values[2] = {0,};
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         if(htim->Instance == TIM15){
-            HAL_ADCEx_MultiModeStart_DMA(&hadc1, adc_values, sizeof(adc_values)/2);
+//            HAL_ADCEx_MultiModeStart_DMA(&hadc1, adc_values, sizeof(adc_values)/2);
             wardCarrier.update();
         }
         if(htim->Instance == TIM2){
@@ -98,7 +102,9 @@ uint32_t R_HALL_values[2] = {0,};
 
     void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
     {
-        if((htim->Instance == TIM3) || (htim->Instance == TIM4))
+        if(htim->Instance == TIM3)
+            wardCarrier.motor_refresh(htim);
+        if(htim->Instance == TIM4)
             wardCarrier.motor_refresh(htim);
     }
 
