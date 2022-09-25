@@ -46,19 +46,21 @@ public:
     }
 
     void init(MotorCfg &config, Collable incomeFunc){
-        incomeCfg = config;
         htim = config.htim;
         timChannel_l = config.timChannel_L;
         timChannel_r = config.timChannel_R;
-        callBackOnEvent = std::move(incomeFunc);
+        configMaxRation = config.maxRatio;
+        mSecAccelTime = config.mSecAccTime;
+        callBackOnEvent = std::move(incomeFunc); //TODO check here!
         timerFreq = SystemCoreClock / (htim->Instance->PSC);
-        timerArr = __HAL_TIM_GET_AUTORELOAD(htim);
+        timerARR = __HAL_TIM_GET_AUTORELOAD(htim);
         setMaxSpeedRatio(config.maxRatio);
     }
 
     void speedAdderCalc() {
-        uint32_t pulseFreq = timerFreq / timerArr;
-        float pulseCount = incomeCfg.mSecAccTime / (float(pulseFreq)/100);
+        uint32_t pulseFreq = timerFreq / timerARR;
+        // float pulseCount = mSecAccelTime / (float(pulseFreq)/100); //TODO change calculation
+        float pulseCount = pulseFreq * (float(mSecAccelTime)/1000);
         if (pulseCount > 1)
             speedAdder = maxRatio / pulseCount;
         else{
@@ -91,14 +93,14 @@ public:
     }
 
     void setMaxSpeedRatio(float newValue){
-        if(maxRatio < 0) maxRatio = 0;
-        else if(maxRatio > MAX_SPEED_RATIO) maxRatio = MAX_SPEED_RATIO;
+        if(newValue < 0) maxRatio = 0;
+        else if(newValue > MAX_SPEED_RATIO) maxRatio = MAX_SPEED_RATIO;
         else maxRatio = newValue;
         speedAdderCalc();
     }
 
     void fullSpeed(){
-        setMaxSpeedRatio(incomeCfg.maxRatio);
+        setMaxSpeedRatio(configMaxRation);
         mode = ACCEL;
     }
 
@@ -106,12 +108,19 @@ public:
         return motorMoving;
     }
 
-    inline void move(MOTOR_DIRECTION dir){
+    inline void move(MOTOR_DIRECTION incomeDir){
         if(motorMoving){
-            if(dir != currentDirection) slowDown();
+            if(incomeDir != currentDirection) changeDir();
         }else{
-            startMotor(dir);
+            currentDirection = incomeDir;
+            startMotor();
         }
+    }
+
+    inline void changeDir(){
+        currentDirection = currentDirection ? BACKWARDS:FORWARD;
+        changingDir = true;
+        slowDown();
     }
 
     [[nodiscard]] inline MOTOR_EVENT getEvent() const {
@@ -128,7 +137,6 @@ public:
 
 protected:
 private:
-    MotorCfg incomeCfg;
     MOTOR_IOS R_EN;
     MOTOR_IOS L_EN;
     MOTOR_IOS R_PWM;
@@ -136,25 +144,28 @@ private:
 
     float SpeedRatio = 0;
     float maxRatio = MAX_SPEED_RATIO;
+    float configMaxRation = MAX_SPEED_RATIO;
     float speedAdder = 0;
 
     MOTOR_DIRECTION currentDirection = FORWARD;
     MODE mode = IDLE;
     MOTOR_EVENT event = EVENT_STOP;
     bool motorMoving = false;
+    bool changingDir = false;
 
     TIM_HandleTypeDef *htim;
     uint32_t timChannel_l;
     uint32_t timChannel_r;
     uint32_t timerFreq;
-    uint32_t timerArr;
+    uint32_t timerARR;
+    uint32_t mSecAccelTime;
 
-    inline void startMotor(MOTOR_DIRECTION direction){
-        currentDirection = direction;
+    inline void startMotor(){
+        SpeedRatio = 0;
         mode = MODE::ACCEL;
         motorMoving = true;
         regValueCalc();
-        if(direction){
+        if(currentDirection){
             R_EN.setValue(HIGH);
             L_EN.setValue(HIGH);
             HAL_TIM_PWM_Start_IT(htim, timChannel_l);
@@ -172,7 +183,6 @@ private:
             L_EN.setValue(LOW);
             R_EN.setValue(LOW);
             motorMoving = false;
-            SpeedRatio = 0;
             mode = MODE::IDLE;
             event = EVENT_STOP;
             callBackOnEvent(this);
@@ -180,7 +190,7 @@ private:
     }
 
     inline void regValueCalc() {
-        auto newCompareValue = (uint32_t)(timerArr * SpeedRatio);
+        auto newCompareValue = (uint32_t)(timerARR * SpeedRatio);
         if(newCompareValue >= 0 && newCompareValue < UINT16_MAX){
             __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
             __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
@@ -212,8 +222,11 @@ private:
             case MODE::DECCEL:
                 SpeedRatio -= speedAdder;
                 if (SpeedRatio <= 0){
-                    SpeedRatio = 0;
-                    stopMotor();
+                    if(changingDir){
+                         startMotor();
+                        changingDir = false;
+                    }
+                    else stopMotor();
                     break;
                 }
             break;
