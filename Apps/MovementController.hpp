@@ -16,16 +16,16 @@ class MovementController{
 public:
     void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
-        cfgLeft.mSecAccTime = 3000;
-        cfgLeft.maxRatio = 1.0;
+        cfgLeft.mSecAccTime = 1500;
+        cfgLeft.maxRatio = 0.4;
         cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
         left_motor.init(cfgLeft, [this](DCMotor* m){OnMotorEvent(m);});
 
         MotorCfg cfgRight{};
-        cfgRight.mSecAccTime = 3000;
-        cfgRight.maxRatio = 1.0;
+        cfgRight.mSecAccTime = 1500;
+        cfgRight.maxRatio = 0.4;
         cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;
@@ -55,13 +55,13 @@ public:
 
     void moveForward(){
         currentDirection = STRAIGHT;
-        right_motor.move(DCMotor::FORWARD);
+//        right_motor.move(DCMotor::FORWARD);
         left_motor.move(DCMotor::FORWARD);
     }
 
     void moveBackwards(){
         currentDirection = STRAIGHT;
-        right_motor.move(DCMotor::BACKWARDS);
+//        right_motor.move(DCMotor::BACKWARDS);
         left_motor.move(DCMotor::BACKWARDS);
     }
 

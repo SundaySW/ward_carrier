@@ -54,12 +54,9 @@ uint32_t R_HALL_values[2] = {0,};
         wardCarrier.getMovController().setADCSensors(adc_values);
         HAL_TIM_Base_Start_IT(&htim15);
     }
-    uint32_t ff = 0;
+
     void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
-        ff++;
-        if(ff==2){
-            ff=0;
             switch (GPIO_Pin) {
                 case BTN_FWD_Pin:
                     wardCarrier.frwd_btn_action(btn_fwrd);
@@ -80,7 +77,6 @@ uint32_t R_HALL_values[2] = {0,};
                 default:
                     break;
             }
-        }
     }
 
     void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
@@ -102,9 +98,7 @@ uint32_t R_HALL_values[2] = {0,};
 
     void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
     {
-        if(htim->Instance == TIM3)
-            wardCarrier.motor_refresh(htim);
-        if(htim->Instance == TIM4)
+        if(htim->Instance == TIM3 || htim->Instance == TIM4)
             wardCarrier.motor_refresh(htim);
     }
 

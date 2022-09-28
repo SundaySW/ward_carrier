@@ -59,7 +59,6 @@ public:
 
     void speedAdderCalc() {
         uint32_t pulseFreq = timerFreq / timerARR;
-        // float pulseCount = mSecAccelTime / (float(pulseFreq)/100); //TODO change calculation
         float pulseCount = pulseFreq * (float(mSecAccelTime)/1000);
         if (pulseCount > 1)
             speedAdder = maxRatio / pulseCount;
@@ -71,7 +70,7 @@ public:
 
     inline void motor_OnTimer(){
         if(mode == in_ERROR) return;
-        if (mode != CONST) {
+        if(mode != CONST) {
             reCalcSpeed();
             regValueCalc();
         }
@@ -111,6 +110,7 @@ public:
     inline void move(MOTOR_DIRECTION incomeDir){
         if(motorMoving){
             if(incomeDir != currentDirection) changeDir();
+            else mode = ACCEL;
         }else{
             currentDirection = incomeDir;
             startMotor();
@@ -118,7 +118,7 @@ public:
     }
 
     inline void changeDir(){
-        currentDirection = currentDirection ? BACKWARDS:FORWARD;
+        currentDirection = currentDirection ? BACKWARDS : FORWARD;
         changingDir = true;
         slowDown();
     }
@@ -161,19 +161,20 @@ private:
     uint32_t mSecAccelTime;
 
     inline void startMotor(){
+        if(motorMoving){
+            HAL_TIM_PWM_Stop_IT(htim, timChannel_l);
+            HAL_TIM_PWM_Stop_IT(htim, timChannel_r);
+        }
         SpeedRatio = 0;
         mode = MODE::ACCEL;
         motorMoving = true;
         regValueCalc();
-        if(currentDirection){
-            R_EN.setValue(HIGH);
-            L_EN.setValue(HIGH);
+        R_EN.setValue(HIGH);
+        L_EN.setValue(HIGH);
+        if(currentDirection)
             HAL_TIM_PWM_Start_IT(htim, timChannel_l);
-        }else{
-            R_EN.setValue(HIGH);
-            L_EN.setValue(HIGH);
+        else
             HAL_TIM_PWM_Start_IT(htim, timChannel_r);
-        }
     }
 
     inline void stopMotor(){
@@ -223,7 +224,7 @@ private:
                 SpeedRatio -= speedAdder;
                 if (SpeedRatio <= 0){
                     if(changingDir){
-                         startMotor();
+                        startMotor();
                         changingDir = false;
                     }
                     else stopMotor();
