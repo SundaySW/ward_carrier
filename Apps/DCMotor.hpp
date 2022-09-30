@@ -87,8 +87,7 @@ public:
     }
 
     void speedCorrection(float newRatioValue){
-        if(newRatioValue > 0 && newRatioValue <= MAX_SPEED_RATIO)
-            setMaxSpeedRatio(newRatioValue);
+        setMaxSpeedRatio(newRatioValue);
     }
 
     void setMaxSpeedRatio(float newValue){
@@ -99,7 +98,7 @@ public:
     }
 
     void fullSpeed(){
-        setMaxSpeedRatio(configMaxRation);
+//        setMaxSpeedRatio(configMaxRation);
         mode = ACCEL;
     }
 
@@ -111,14 +110,11 @@ public:
         if(motorMoving){
             if(incomeDir != currentDirection) changeDir();
             else mode = ACCEL;
-        }else{
-            currentDirection = incomeDir;
-            startMotor();
-        }
+        }else
+            startMotor(incomeDir);
     }
 
     inline void changeDir(){
-        currentDirection = currentDirection ? BACKWARDS : FORWARD;
         changingDir = true;
         slowDown();
     }
@@ -160,7 +156,8 @@ private:
     uint32_t timerARR;
     uint32_t mSecAccelTime;
 
-    inline void startMotor(){
+    inline void startMotor(MOTOR_DIRECTION direction){
+        currentDirection = direction;
         if(motorMoving){
             HAL_TIM_PWM_Stop_IT(htim, timChannel_l);
             HAL_TIM_PWM_Stop_IT(htim, timChannel_r);
@@ -171,7 +168,7 @@ private:
         regValueCalc();
         R_EN.setValue(HIGH);
         L_EN.setValue(HIGH);
-        if(currentDirection)
+        if(direction)
             HAL_TIM_PWM_Start_IT(htim, timChannel_l);
         else
             HAL_TIM_PWM_Start_IT(htim, timChannel_r);
@@ -224,8 +221,8 @@ private:
                 SpeedRatio -= speedAdder;
                 if (SpeedRatio <= 0){
                     if(changingDir){
-                        startMotor();
                         changingDir = false;
+                        startMotor(currentDirection ? BACKWARDS : FORWARD);
                     }
                     else stopMotor();
                     break;

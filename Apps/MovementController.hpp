@@ -55,13 +55,13 @@ public:
 
     void moveForward(){
         currentDirection = STRAIGHT;
-//        right_motor.move(DCMotor::FORWARD);
+        right_motor.move(DCMotor::FORWARD);
         left_motor.move(DCMotor::FORWARD);
     }
 
     void moveBackwards(){
         currentDirection = STRAIGHT;
-//        right_motor.move(DCMotor::BACKWARDS);
+        right_motor.move(DCMotor::BACKWARDS);
         left_motor.move(DCMotor::BACKWARDS);
     }
 
@@ -104,17 +104,17 @@ public:
     }
 
     inline void checkHALLSensors(){
-        uint32_t lAveragePulse = 0;
-        uint32_t rAveragePulse = 0;
+        uint32_t AveragePulseL = 0;
+        uint32_t AveragePulseR = 0;
         for(uint8_t i = 0; i < hall_values_size; i++){
-            lAveragePulse += (uint32_t)(*l_hall_values);
-            rAveragePulse += (uint32_t)(*r_hall_values);
+            AveragePulseL += (uint32_t)(*l_hall_values);
+            AveragePulseR += (uint32_t)(*r_hall_values);
         }
-        lAveragePulse /= hall_values_size;
-        rAveragePulse /= hall_values_size;
-        uint32_t diff = lAveragePulse > rAveragePulse ? lAveragePulse-rAveragePulse : rAveragePulse - lAveragePulse;
+        AveragePulseL /= hall_values_size;
+        AveragePulseR /= hall_values_size;
+        uint32_t diff = AveragePulseL > AveragePulseR ? (AveragePulseL - AveragePulseR) : (AveragePulseR - AveragePulseL);
         if(diff > DIFF_CRITICAL_VALUE){
-            if(lAveragePulse > rAveragePulse) left_motor.speedCorrection(calcSpeedDelta(diff));
+            if(AveragePulseL > AveragePulseR) left_motor.speedCorrection(calcSpeedDelta(diff));
             else right_motor.speedCorrection(calcSpeedDelta(diff));
         }
     }
