@@ -9,23 +9,30 @@
 
 class MovementController{
     using MOTOR_PIN = PIN<MOTOR_OUTS, PinWriteable>;
-    enum DEVICE_DIRECTION{
-        TURN = 0,
-        STRAIGHT = 1,
-    };
 public:
+    enum DEVICE_DIRECTION{
+        STOP = 0,
+        FORWARD_DIRECTION = 1,
+        BACKWARDS_DIRECTION = 2
+    };
+    enum DEVICE_SIDE{
+        CENTER = 0,
+        TURN_LEFT = 1,
+        TURN_RIGHT = 2,
+    };
+
     void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
-        cfgLeft.mSecAccTime = 1500;
-        cfgLeft.maxRatio = 0.4;
+        cfgLeft.mSecAccTime = 1000;
+        cfgLeft.maxRatio = 0.1;
         cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
         left_motor.init(cfgLeft, [this](DCMotor* m){OnMotorEvent(m);});
 
         MotorCfg cfgRight{};
-        cfgRight.mSecAccTime = 1500;
-        cfgRight.maxRatio = 0.4;
+        cfgRight.mSecAccTime = 1000;
+        cfgRight.maxRatio = 0.1;
         cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;
@@ -54,37 +61,51 @@ public:
     }
 
     void moveForward(){
-        currentDirection = STRAIGHT;
+        currentDirection = FORWARD_DIRECTION;
         right_motor.move(DCMotor::FORWARD);
         left_motor.move(DCMotor::FORWARD);
     }
 
     void moveBackwards(){
-        currentDirection = STRAIGHT;
+        currentDirection = BACKWARDS_DIRECTION;
         right_motor.move(DCMotor::BACKWARDS);
         left_motor.move(DCMotor::BACKWARDS);
     }
 
     void turnLeft(){
-        currentDirection = TURN;
-        if(right_motor.isMotorMoving()){
-            if(left_motor.isMotorMoving()) left_motor.slowDown();
-            else right_motor.move(DCMotor::FORWARD);
-        }else{
-            right_motor.move(DCMotor::FORWARD);
+        if(currentSide == TURN_LEFT) finishTurn();
+        else{
+            currentSide = TURN_LEFT;
             left_motor.move(DCMotor::BACKWARDS);
+            right_motor.move(DCMotor::FORWARD);
         }
+
+//        currentSide = TURN_LEFT;
+//        if(right_motor.isMotorMoving()){
+//            if(left_motor.isMotorMoving()) left_motor.slowDown();
+//            else right_motor.move(DCMotor::FORWARD);
+//        }else{
+//            right_motor.move(DCMotor::FORWARD);
+//            left_motor.move(DCMotor::BACKWARDS);
+//        }
     }
 
     void turnRight(){
-        currentDirection = TURN;
-        if(left_motor.isMotorMoving()){
-            if(right_motor.isMotorMoving()) right_motor.slowDown();
-            else left_motor.move(DCMotor::FORWARD);
-        }else{
+        if(currentSide == TURN_RIGHT) finishTurn();
+        else{
+            currentSide = TURN_RIGHT;
             left_motor.move(DCMotor::FORWARD);
             right_motor.move(DCMotor::BACKWARDS);
         }
+
+//        currentSide = TURN_RIGHT;
+//        if(left_motor.isMotorMoving()){
+//            if(right_motor.isMotorMoving()) right_motor.slowDown();
+//            else left_motor.move(DCMotor::FORWARD);
+//        }else{
+//            left_motor.move(DCMotor::FORWARD);
+//            right_motor.move(DCMotor::BACKWARDS);
+//        }
     }
 
     void straightDirection(){
@@ -92,13 +113,23 @@ public:
         left_motor.fullSpeed();
     }
 
+    void finishTurn(){
+        currentSide = CENTER;
+        if(currentDirection == STOP) stop();
+        else{
+            if(currentDirection == FORWARD_DIRECTION) moveForward();
+            else if(currentDirection == BACKWARDS_DIRECTION) moveBackwards();
+        }
+    }
+
     void stop(){
+        currentDirection = STOP;
         right_motor.slowDown();
         left_motor.slowDown();
     }
 
     void update(){
-        if(currentDirection == STRAIGHT){
+        if(currentDirection == FORWARD_DIRECTION){
 //            checkHALLSensors();
         }
     }
@@ -148,6 +179,10 @@ public:
         else if(left_motor.isMyTimer(check_htim)) left_motor.motor_OnTimer();
     }
 
+    DEVICE_DIRECTION getDeviceDirection(){
+        return currentDirection;
+    }
+
 protected:
 private:
     uint32_t* l_hall_values;
@@ -156,7 +191,8 @@ private:
     uint32_t* adc_values;
     uint8_t adc_values_size;
 
-    DEVICE_DIRECTION currentDirection = STRAIGHT;
+    DEVICE_DIRECTION currentDirection = STOP;
+    DEVICE_SIDE currentSide = CENTER;
     MOTOR_PIN R_REN_PIN = MOTOR_PIN(R_EN, R_R_EN_GPIO_Port, R_R_EN_Pin);
     MOTOR_PIN R_LEN_PIN = MOTOR_PIN(L_EN, R_L_EN_GPIO_Port, R_L_EN_Pin);
     MOTOR_PIN R_RPWM_PIN = MOTOR_PIN(R_PWM, R_RPWM_GPIO_Port, R_RPWM_Pin);

@@ -84,6 +84,7 @@ public:
         if(value > 0 && value < maxRatio)
             setMaxSpeedRatio(maxRatio-value);
         mode = DECCEL;
+        changingDir = false;
     }
 
     void speedCorrection(float newRatioValue){
@@ -98,8 +99,9 @@ public:
     }
 
     void fullSpeed(){
-//        setMaxSpeedRatio(configMaxRation);
-        mode = ACCEL;
+        setMaxSpeedRatio(configMaxRation);
+        if(motorMoving) mode = ACCEL;
+        else startMotor(currentDirection);
     }
 
     [[nodiscard]] inline bool isMotorMoving() const{
@@ -116,7 +118,7 @@ public:
 
     inline void changeDir(){
         changingDir = true;
-        slowDown();
+        mode = DECCEL;
     }
 
     [[nodiscard]] inline MOTOR_EVENT getEvent() const {
@@ -168,14 +170,13 @@ private:
         regValueCalc();
         R_EN.setValue(HIGH);
         L_EN.setValue(HIGH);
-        if(direction)
+        if(direction == FORWARD)
             HAL_TIM_PWM_Start_IT(htim, timChannel_l);
-        else
+        else if(direction == BACKWARDS)
             HAL_TIM_PWM_Start_IT(htim, timChannel_r);
     }
 
     inline void stopMotor(){
-        if(motorMoving){
             HAL_TIM_PWM_Stop_IT(htim, timChannel_l);
             HAL_TIM_PWM_Stop_IT(htim, timChannel_r);
             L_EN.setValue(LOW);
@@ -184,7 +185,6 @@ private:
             mode = MODE::IDLE;
             event = EVENT_STOP;
             callBackOnEvent(this);
-        }
     }
 
     inline void regValueCalc() {

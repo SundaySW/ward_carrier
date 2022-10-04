@@ -59,20 +59,20 @@ uint32_t R_HALL_values[2] = {0,};
     {
             switch (GPIO_Pin) {
                 case BTN_FWD_Pin:
-                    wardCarrier.frwd_btn_action(btn_fwrd);
                     btn_fwrd.changeState();
+                    wardCarrier.frwd_btn_action(btn_fwrd);
                     break;
                 case BTN_RVS_Pin:
-                    wardCarrier.rvrs_btn_action(btn_rvrs);
                     btn_rvrs.changeState();
+                    wardCarrier.rvrs_btn_action(btn_rvrs);
                     break;
                 case BTN_LEFT_Pin:
-                    wardCarrier.left_btn_action(btn_left);
                     btn_left.changeState();
+                    wardCarrier.left_btn_action(btn_left);
                     break;
                 case BTN_RIGHT_Pin:
-                    wardCarrier.right_btn_action(btn_right);
                     btn_right.changeState();
+                    wardCarrier.right_btn_action(btn_right);
                     break;
                 default:
                     break;

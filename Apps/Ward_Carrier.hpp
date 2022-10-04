@@ -34,22 +34,18 @@ public:
     void frwd_btn_action(bool state){
         if(state) movementController.moveForward();
         else movementController.stop();
-//        movementController.moveBackwards();
     }
     void rvrs_btn_action(bool state){
         if(state) movementController.moveBackwards();
         else movementController.stop();
-//        movementController.moveBackwards();
     }
     void left_btn_action(bool state){
         if(state) movementController.turnLeft();
-        else movementController.straightDirection();
-//        movementController.moveForward();
+        else movementController.finishTurn();
     }
     void right_btn_action(bool state){
         if(state) movementController.turnRight();
-        else movementController.straightDirection();
-//        movementController.stop();
+        else movementController.finishTurn();
     }
 
     void update() {

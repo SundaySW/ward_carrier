@@ -100,8 +100,9 @@ int main(void)
   MX_TIM15_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_TIM16_Init();
   /* USER CODE BEGIN 2 */
-    initPerf();
+  initPerf();
   /* USER CODE END 2 */
 
   /* Infinite loop */
