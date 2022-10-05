@@ -23,16 +23,16 @@ public:
 
     void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
-        cfgLeft.mSecAccTime = 1000;
-        cfgLeft.maxRatio = 0.1;
+        cfgLeft.mSecAccTime = 100;
+        cfgLeft.maxRatio = 0.2;
         cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
         left_motor.init(cfgLeft, [this](DCMotor* m){OnMotorEvent(m);});
 
         MotorCfg cfgRight{};
-        cfgRight.mSecAccTime = 1000;
-        cfgRight.maxRatio = 0.1;
+        cfgRight.mSecAccTime = 100;
+        cfgRight.maxRatio = 0.2;
         cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;
@@ -60,13 +60,13 @@ public:
         if(currentDirection){}
     }
 
-    void moveForward(){
+    inline void moveForward(){
         currentDirection = FORWARD_DIRECTION;
         right_motor.move(DCMotor::FORWARD);
         left_motor.move(DCMotor::FORWARD);
     }
 
-    void moveBackwards(){
+    inline void moveBackwards(){
         currentDirection = BACKWARDS_DIRECTION;
         right_motor.move(DCMotor::BACKWARDS);
         left_motor.move(DCMotor::BACKWARDS);
@@ -130,7 +130,7 @@ public:
 
     void update(){
         if(currentDirection == FORWARD_DIRECTION){
-//            checkHALLSensors();
+            checkHALLSensors();
         }
     }
 

@@ -10,11 +10,17 @@ uint32_t L_HALL_values[2] = {0,};
 uint32_t R_HALL_values[2] = {0,};
 
     Ward_Carrier wardCarrier;
+    using BTN_PIN = PIN<BTN_TYPE, PinReadable>;
+    BTN_PIN FWD_BTN_PIN = BTN_PIN(BTN_FRWD, BTN_FWD_GPIO_Port, BTN_FWD_Pin);
+    BTN_PIN RVS_BTN_PIN = BTN_PIN(BTN_RVRS, BTN_RVS_GPIO_Port, BTN_RVS_Pin);
+    BTN_PIN LEFT_BTN_PIN = BTN_PIN(BTN_LEFT, BTN_LEFT_GPIO_Port, BTN_LEFT_Pin);
+    BTN_PIN RIGHT_BTN_PIN = BTN_PIN(BTN_RIGHT, BTN_RIGHT_GPIO_Port, BTN_RIGHT_Pin);
 
-    Button btn_fwrd = Button(BTN_FRWD, BTN_FWD_Pin);
-    Button btn_rvrs = Button(BTN_RVRS, BTN_RVS_Pin);
-    Button btn_left = Button(BTN_LEFT, BTN_LEFT_Pin);
-    Button btn_right = Button(BTN_RIGHT, BTN_RIGHT_Pin);
+    Button btn_fwrd = Button(FWD_BTN_PIN);
+    Button btn_rvrs = Button(RVS_BTN_PIN);
+    Button btn_left = Button(LEFT_BTN_PIN);
+    Button btn_right = Button(RIGHT_BTN_PIN);
+//    Button btnArr[4] = {btn_fwrd, btn_rvrs, btn_left, btn_right};
 
     void EXTI_clear_enable(){
         __HAL_GPIO_EXTI_CLEAR_IT(BTN_LEFT_Pin);
@@ -59,19 +65,15 @@ uint32_t R_HALL_values[2] = {0,};
     {
             switch (GPIO_Pin) {
                 case BTN_FWD_Pin:
-                    btn_fwrd.changeState();
                     wardCarrier.frwd_btn_action(btn_fwrd);
                     break;
                 case BTN_RVS_Pin:
-                    btn_rvrs.changeState();
                     wardCarrier.rvrs_btn_action(btn_rvrs);
                     break;
                 case BTN_LEFT_Pin:
-                    btn_left.changeState();
                     wardCarrier.left_btn_action(btn_left);
                     break;
                 case BTN_RIGHT_Pin:
-                    btn_right.changeState();
                     wardCarrier.right_btn_action(btn_right);
                     break;
                 default:
@@ -84,6 +86,11 @@ uint32_t R_HALL_values[2] = {0,};
         if(hadc->Instance == ADC1)
             wardCarrier.getMovController().checkCurrent();
     }
+
+//    void checkAllBtnOff(){
+//        for(auto btn: btnArr)
+//            if(!btn()) btn.setOff();
+//    }
 
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {

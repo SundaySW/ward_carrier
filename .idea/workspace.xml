@@ -21,30 +21,28 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="ward_carrier" targetName="ward_carrier-hex" />
-      <config projectName="ward_carrier" targetName="ward_carrier" />
       <config projectName="ward_carrier" targetName="ward_carrier-Ext_libs" />
       <config projectName="ward_carrier" targetName="ward_carrier-Drivers" />
       <config projectName="ward_carrier" targetName="ward_carrier-bin" />
+      <config projectName="ward_carrier" targetName="ward_carrier" />
     </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug-MinGW (STM32)" CONFIG_NAME="Debug" TOOLCHAIN_NAME="MinGW (STM32)" GENERATION_OPTIONS="-DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=&quot;cmake/toolchain.cmake&quot;" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=&quot;cmake/toolchain.cmake&quot;" />
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" GENERATION_OPTIONS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=&quot;cmake/toolchain.cmake&quot;" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f267d3a-866f-4891-9bfc-f3658976e07c" name="Default Changelist" comment="bug fix on HW">
-      <change beforePath="$PROJECT_DIR$/Apps/DCMotor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/DCMotor.hpp" afterDir="false" />
+    <list default="true" id="9ce5fef7-e071-4377-93b2-9bdfab953389" name="Default Changelist" comment="changes while hardware test on base">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/MovementController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/MovementController.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Ward_Carrier.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Ward_Carrier.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/main1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/main1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/tim.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/gpio.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ward_Carrier.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/Ward_Carrier.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ext_libs/IO/Button.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Ext_libs/IO/Button.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ext_libs/IO/PIN.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Ext_libs/IO/PIN.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ward_carrier.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ward_carrier.cbp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,23 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW (STM32)" />
+  <component name="EmbeddedSvdWindowState">
+    <option name="columnWidths">
+      <list>
+        <option value="187" />
+        <option value="82" />
+        <option value="1157" />
+      </list>
+    </option>
+    <option name="columnOrder">
+      <list>
+        <option value="Name" />
+        <option value="Value" />
+        <option value="Description" />
+      </list>
+    </option>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -63,12 +77,8 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="SundaySW" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="ward_carrier" />
-  </component>
-  <component name="ProjectId" id="2ELQXModg7oOaf37Nk1KH4BuZct" />
+  <component name="ProjectId" id="2EjBJlHHjAIAX44rgrDfcX0VoyP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -78,46 +88,47 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunManager" selected="Embedded GDB Server.ward_carrier">
-    <configuration name="ward_carrier-Drivers" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-Drivers" CONFIG_NAME="Debug-MinGW (STM32)">
+    <configuration name="ward_carrier-Drivers" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-Drivers" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ward_carrier-Ext_libs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-Ext_libs" CONFIG_NAME="Debug-MinGW (STM32)">
+    <configuration name="ward_carrier-Ext_libs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-Ext_libs" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ward_carrier-bin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-bin" CONFIG_NAME="Debug-MinGW (STM32)">
+    <configuration name="ward_carrier-bin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-bin" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ward_carrier-hex" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-hex" CONFIG_NAME="Debug-MinGW (STM32)">
+    <configuration name="ward_carrier-hex" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier-hex" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ward_carrier" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier" CONFIG_NAME="Debug-MinGW (STM32)" RUN_TARGET_PROJECT_NAME="ward_carrier" RUN_TARGET_NAME="ward_carrier">
+    <configuration name="ward_carrier" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ward_carrier" RUN_TARGET_NAME="ward_carrier">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ward_carrier" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true" PROGRAM_PARAMS="-f interface/stlink.cfg -f target/stm32g4x.cfg" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier" CONFIG_NAME="Debug-MinGW (STM32)" version="1" RUN_TARGET_PROJECT_NAME="ward_carrier" RUN_TARGET_NAME="ward_carrier">
-      <custom-gdb-server version="1" gdb-connect="tcp:127.0.0.1:3333" executable="D:\installs\openocd-v0.11.0\bin\openocd.exe" warmup-ms="0" download-type="ALWAYS" reset-cmd="monitor reset halt" reset-after-download="true" />
+    <configuration name="ward_carrier" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true" PROGRAM_PARAMS="-f interface/stlink.cfg -f target/stm32g4x.cfg " REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ward_carrier" TARGET_NAME="ward_carrier" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="ward_carrier" RUN_TARGET_NAME="ward_carrier">
+      <custom-gdb-server version="1" gdb-connect="tcp:127.0.0.1:3333" executable="C:\Program Files\Openocd-0.11.0\bin\openocd.exe" warmup-ms="100" download-type="ALWAYS" reset-cmd="monitor reset halt" reset-after-download="true" />
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.ward_carrier-Drivers" />
-      <item itemvalue="CMake Application.ward_carrier-Ext_libs" />
+      <item itemvalue="CMake Application.ward_carrier" />
       <item itemvalue="CMake Application.ward_carrier-bin" />
       <item itemvalue="CMake Application.ward_carrier-hex" />
-      <item itemvalue="CMake Application.ward_carrier" />
+      <item itemvalue="CMake Application.ward_carrier-Drivers" />
+      <item itemvalue="CMake Application.ward_carrier-Ext_libs" />
       <item itemvalue="Embedded GDB Server.ward_carrier" />
     </list>
   </component>
@@ -126,90 +137,34 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8f267d3a-866f-4891-9bfc-f3658976e07c" name="Default Changelist" comment="" />
-      <created>1662372422815</created>
+      <changelist id="9ce5fef7-e071-4377-93b2-9bdfab953389" name="Default Changelist" comment="" />
+      <created>1663099043784</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1662372422815</updated>
-      <workItem from="1662372426559" duration="146000" />
-      <workItem from="1662375986863" duration="1020000" />
-      <workItem from="1662385083629" duration="4342000" />
-      <workItem from="1662463699786" duration="5084000" />
-      <workItem from="1662477220216" duration="2417000" />
-      <workItem from="1662480403236" duration="3319000" />
-      <workItem from="1662543961013" duration="7548000" />
-      <workItem from="1662556073416" duration="6086000" />
-      <workItem from="1662638210803" duration="3408000" />
-      <workItem from="1662657053320" duration="2721000" />
-      <workItem from="1662659968328" duration="377000" />
-      <workItem from="1662716600092" duration="7511000" />
-      <workItem from="1662979340969" duration="15567000" />
-      <workItem from="1663002747906" duration="51000" />
-      <workItem from="1664293672743" duration="5126000" />
-      <workItem from="1664301107418" duration="134000" />
-      <workItem from="1664359022854" duration="7740000" />
-      <workItem from="1664445375158" duration="7029000" />
-      <workItem from="1664546541064" duration="3017000" />
-      <workItem from="1664794629894" duration="3838000" />
-      <workItem from="1664877143271" duration="14468000" />
+      <updated>1663099043784</updated>
+      <workItem from="1663099046804" duration="151000" />
+      <workItem from="1663099203435" duration="255000" />
+      <workItem from="1663183822527" duration="3657000" />
+      <workItem from="1663239809464" duration="8767000" />
+      <workItem from="1663334724425" duration="546000" />
+      <workItem from="1664954844602" duration="87000" />
+      <workItem from="1664970245333" duration="4538000" />
     </task>
-    <task id="LOCAL-00001" summary="small changes">
-      <created>1662390589386</created>
+    <task id="LOCAL-00001" summary="small_fix_on_dc_motor">
+      <created>1663187391227</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1662390589386</updated>
+      <updated>1663187391227</updated>
     </task>
-    <task id="LOCAL-00002" summary="small changes">
-      <created>1662488844416</created>
+    <task id="LOCAL-00002" summary="changes while hardware test on base">
+      <created>1663335210240</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1662488844416</updated>
+      <updated>1663335210240</updated>
     </task>
-    <task id="LOCAL-00003" summary="improvements_new_functionality">
-      <created>1662563010773</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1662563010773</updated>
-    </task>
-    <task id="LOCAL-00004" summary="pwm pulse calc improved">
-      <created>1662649936248</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1662649936248</updated>
-    </task>
-    <task id="LOCAL-00005" summary="small fix">
-      <created>1662735495126</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1662735495126</updated>
-    </task>
-    <task id="LOCAL-00006" summary="new_motor">
-      <created>1663002764437</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1663002764437</updated>
-    </task>
-    <task id="LOCAL-00007" summary="bug fix on HW">
-      <created>1664377668534</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1664377668534</updated>
-    </task>
-    <task id="LOCAL-00008" summary="bug fix on HW">
-      <created>1664550521932</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1664550521932</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,116 +183,100 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small changes" />
-    <MESSAGE value="improvements_new_functionality" />
-    <MESSAGE value="pwm pulse calc improved" />
-    <MESSAGE value="small fix" />
-    <MESSAGE value="new_motor" />
-    <MESSAGE value="bug fix on HW" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix on HW" />
+    <MESSAGE value="small_fix_on_dc_motor" />
+    <MESSAGE value="changes while hardware test on base" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes while hardware test on base" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1664881733539">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1663245569526">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1664881733539" />
-    <state width="438" height="466" key="DebuggerActiveHint" timestamp="1662560038280">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1663245569526" />
+    <state width="408" height="466" key="DebuggerActiveHint" timestamp="1663253051644">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="438" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1662560038280" />
-    <state x="827" y="269" key="EnvironmentVariablesDialog" timestamp="1664881714241">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="408" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1663253051644" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1663335274513">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="827" y="269" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1664881714241" />
-    <state x="742" y="386" key="Github.CreatePullRequestDialog" timestamp="1662390599624">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1663335274513" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1663185242277">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="742" y="386" key="Github.CreatePullRequestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1662390599624" />
-    <state width="1876" height="342" key="GridCell.Tab.0.bottom" timestamp="1664906079441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1663185242277" />
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1664974648833">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079441" />
-    <state width="1876" height="342" key="GridCell.Tab.0.center" timestamp="1664906079441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664974648833" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1664974648833">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079441" />
-    <state width="1876" height="342" key="GridCell.Tab.0.left" timestamp="1664906079441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1664974648833" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1664974648833">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079441" />
-    <state width="1876" height="342" key="GridCell.Tab.0.right" timestamp="1664906079441">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1664974648833" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1664974648833">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079441" />
-    <state width="1876" height="342" key="GridCell.Tab.1.bottom" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1664974648833" />
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.1.center" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.1.center" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.1.left" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.1.left" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.1.right" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.1.right" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.2.bottom" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.2.bottom" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.2.center" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.2.center" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.2.left" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.2.left" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state width="1876" height="342" key="GridCell.Tab.2.right" timestamp="1664906079332">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state width="1493" height="195" key="GridCell.Tab.2.right" timestamp="1664974648764">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1664906079332" />
-    <state x="461" y="151" key="SettingsEditor" timestamp="1662464659415">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="195" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1664974648764" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1664974802343">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1662464659415" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1664550539958">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1664974802343" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1663335220522">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1664550539958" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1662659929896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1663335220522" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1663335274513">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1662659929896" />
-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1662659832116">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1663335274513" />
+    <state x="322" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1663251630376">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1662659832116" />
-    <state x="667" y="255" width="585" height="530" key="find.popup" timestamp="1662639963977">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="322" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1663251630376" />
+    <state x="486" y="201" key="git4idea.merge.GitPullDialog" timestamp="1664954874266">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="667" y="255" width="585" height="530" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1662639963977" />
-    <state x="673" y="307" key="git4idea.merge.GitPullDialog" timestamp="1664293695649">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="673" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1664293695649" />
-    <state x="913" y="341" key="refactoring.ChangeSignatureDialog" timestamp="1662388245919">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="913" y="341" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1662388245919" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1663001354318">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1663001354318" />
+    <state x="486" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1664954874266" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="com.jetbrains.cidr.embedded.customgdbserver.type">
-        <watch expression="this-&gt;movementController.R_LEN_PIN" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>

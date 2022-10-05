@@ -32,19 +32,19 @@ public:
     }
 
     void frwd_btn_action(bool state){
-        if(state) movementController.moveForward();
+        if(!state) movementController.moveForward();
         else movementController.stop();
     }
     void rvrs_btn_action(bool state){
-        if(state) movementController.moveBackwards();
+        if(!state) movementController.moveBackwards();
         else movementController.stop();
     }
     void left_btn_action(bool state){
-        if(state) movementController.turnLeft();
+        if(!state) movementController.turnLeft();
         else movementController.finishTurn();
     }
     void right_btn_action(bool state){
-        if(state) movementController.turnRight();
+        if(!state) movementController.turnRight();
         else movementController.finishTurn();
     }
 

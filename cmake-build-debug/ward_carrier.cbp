@@ -515,16 +515,6 @@
 			<Option target="ward_carrier-Drivers"/>
 			<Option target="ward_carrier-Ext_libs"/>
 		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c.h">
-			<Option target="ward_carrier"/>
-			<Option target="ward_carrier-Drivers"/>
-			<Option target="ward_carrier-Ext_libs"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c_ex.h">
-			<Option target="ward_carrier"/>
-			<Option target="ward_carrier-Drivers"/>
-			<Option target="ward_carrier-Ext_libs"/>
-		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h">
 			<Option target="ward_carrier"/>
 			<Option target="ward_carrier-Drivers"/>
@@ -594,12 +584,6 @@
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c">
-			<Option target="ward_carrier-Drivers"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c">
-			<Option target="ward_carrier-Drivers"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c">
 			<Option target="ward_carrier-Drivers"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c">
@@ -769,12 +753,6 @@
 			<Option target="ward_carrier"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj">
-			<Option target="ward_carrier"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.c.obj">
-			<Option target="ward_carrier"/>
-		</Unit>
-		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.c.obj">
 			<Option target="ward_carrier"/>
 		</Unit>
 		<Unit filename="C:/Users/79162/CLionProjects/ward_carrier/cmake-build-debug/Drivers/CMakeFiles/ward_carrier-Drivers.dir/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c.obj">
