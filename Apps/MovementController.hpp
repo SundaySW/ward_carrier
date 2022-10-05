@@ -24,7 +24,7 @@ public:
     void initMotors(TIM_HandleTypeDef *htim_l, TIM_HandleTypeDef *htim_r){
         MotorCfg cfgLeft{};
         cfgLeft.mSecAccTime = 100;
-        cfgLeft.maxRatio = 0.2;
+        cfgLeft.maxRatio = 0.4;
         cfgLeft.htim = htim_l;
         cfgLeft.timChannel_L = TIM_CHANNEL_1;
         cfgLeft.timChannel_R = TIM_CHANNEL_2;
@@ -32,7 +32,7 @@ public:
 
         MotorCfg cfgRight{};
         cfgRight.mSecAccTime = 100;
-        cfgRight.maxRatio = 0.2;
+        cfgRight.maxRatio = 0.4;
         cfgRight.htim = htim_r;
         cfgRight.timChannel_L = TIM_CHANNEL_1;
         cfgRight.timChannel_R = TIM_CHANNEL_2;
@@ -144,10 +144,10 @@ public:
         AveragePulseL /= hall_values_size;
         AveragePulseR /= hall_values_size;
         uint32_t diff = AveragePulseL > AveragePulseR ? (AveragePulseL - AveragePulseR) : (AveragePulseR - AveragePulseL);
-        if(diff > DIFF_CRITICAL_VALUE){
-            if(AveragePulseL > AveragePulseR) left_motor.speedCorrection(calcSpeedDelta(diff));
-            else right_motor.speedCorrection(calcSpeedDelta(diff));
-        }
+//        if(diff > DIFF_CRITICAL_VALUE){
+//            if(AveragePulseL > AveragePulseR) left_motor.speedCorrection(calcSpeedDelta(diff));
+//            else right_motor.speedCorrection(calcSpeedDelta(diff));
+//        }
     }
 
     uint16_t calcSpeedDelta(uint32_t diff){

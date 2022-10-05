@@ -43,8 +43,8 @@ uint32_t R_HALL_values[2] = {0,};
 //        HAL_ADCEx_MultiModeStart_DMA(&hadc1, (uint32_t*)&adc_values, sizeof(adc_values)/2);
     }
     inline void initHALLSensors(){
-        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
         HAL_TIM_IC_Start_DMA(&htim8, TIM_CHANNEL_2, (uint32_t*)R_HALL_values, sizeof(R_HALL_values));
+        HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_2, (uint32_t*)L_HALL_values, sizeof(L_HALL_values));
     }
     /**
      * @brief all chip configured specs should be managed here in one place
@@ -58,7 +58,7 @@ uint32_t R_HALL_values[2] = {0,};
         wardCarrier.getMovController().setHALLSensors(L_HALL_values, R_HALL_values);
         initADC();
         wardCarrier.getMovController().setADCSensors(adc_values);
-        HAL_TIM_Base_Start_IT(&htim15);
+        HAL_TIM_Base_Start_IT(&htim2);
     }
 
     void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -94,8 +94,10 @@ uint32_t R_HALL_values[2] = {0,};
 
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
-        if(htim->Instance == TIM15){
+        if(htim->Instance == TIM2){
 //            HAL_ADCEx_MultiModeStart_DMA(&hadc1, adc_values, sizeof(adc_values)/2);
+            uint32_t lhall = L_HALL_values[0];
+            uint32_t rhall = R_HALL_values[0];
             wardCarrier.update();
         }
         if(htim->Instance == TIM2){
