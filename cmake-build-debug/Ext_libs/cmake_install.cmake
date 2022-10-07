@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/79162/CLionProjects/ward_carrier/Ext_libs
+# Install script for directory: C:/Users/outlaw/CLionProjects/ward_carrier/Ext_libs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

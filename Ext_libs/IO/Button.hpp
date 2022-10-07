@@ -8,7 +8,7 @@
 #include <main.h>
 struct Button{
     using BTN_PIN = PIN<BTN_TYPE, PinReadable>;
-    explicit Button(BTN_PIN& income_Pin): Pin(income_Pin){}
+    explicit Button(BTN_PIN&& income_Pin): Pin(income_Pin){}
     BTN_PIN Pin;
     bool _state = false;
     inline operator bool() const{return Pin.getValue();}

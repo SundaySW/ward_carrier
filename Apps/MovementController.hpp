@@ -40,13 +40,13 @@ public:
     }
 
     template<uint8_t N>
-    constexpr void setADCSensors(uint32_t(&adc_values_in)[N]){
+    constexpr void setADCSensorsVars(uint32_t(&adc_values_in)[N]){
         adc_values = adc_values_in;
         adc_values_size = N;
     }
 
     template<uint8_t N>
-    constexpr void setHALLSensors(uint32_t(&hall_l)[N], uint32_t (&hall_r)[N]){
+    constexpr void setHALLSensorsVars(uint32_t(&hall_l)[N], uint32_t (&hall_r)[N]){
         l_hall_values = hall_l;
         r_hall_values = hall_r;
         hall_values_size = N;
@@ -57,7 +57,6 @@ public:
     }
 
     void OnMotorStep(DCMotor *motor){
-        if(currentDirection){}
     }
 
     inline void moveForward(){
@@ -79,15 +78,6 @@ public:
             left_motor.move(DCMotor::BACKWARDS);
             right_motor.move(DCMotor::FORWARD);
         }
-
-//        currentSide = TURN_LEFT;
-//        if(right_motor.isMotorMoving()){
-//            if(left_motor.isMotorMoving()) left_motor.slowDown();
-//            else right_motor.move(DCMotor::FORWARD);
-//        }else{
-//            right_motor.move(DCMotor::FORWARD);
-//            left_motor.move(DCMotor::BACKWARDS);
-//        }
     }
 
     void turnRight(){
@@ -97,15 +87,6 @@ public:
             left_motor.move(DCMotor::FORWARD);
             right_motor.move(DCMotor::BACKWARDS);
         }
-
-//        currentSide = TURN_RIGHT;
-//        if(left_motor.isMotorMoving()){
-//            if(right_motor.isMotorMoving()) right_motor.slowDown();
-//            else left_motor.move(DCMotor::FORWARD);
-//        }else{
-//            left_motor.move(DCMotor::FORWARD);
-//            right_motor.move(DCMotor::BACKWARDS);
-//        }
     }
 
     void straightDirection(){

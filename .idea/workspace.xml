@@ -21,10 +21,10 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="ward_carrier" targetName="ward_carrier-hex" />
+      <config projectName="ward_carrier" targetName="ward_carrier" />
       <config projectName="ward_carrier" targetName="ward_carrier-Ext_libs" />
       <config projectName="ward_carrier" targetName="ward_carrier-Drivers" />
       <config projectName="ward_carrier" targetName="ward_carrier-bin" />
-      <config projectName="ward_carrier" targetName="ward_carrier" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -36,18 +36,17 @@
   <component name="ChangeListManager">
     <list default="true" id="9ce5fef7-e071-4377-93b2-9bdfab953389" name="Default Changelist" comment="new btn model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/DCMotor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/DCMotor.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/MovementController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/MovementController.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/main1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/main1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/adc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/adc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/stm32g4xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/stm32g4xx_it.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/tim.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/adc.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/adc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/dma.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/dma.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/stm32g4xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/stm32g4xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ward_Carrier.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/Ward_Carrier.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ext_libs/IO/Button.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Ext_libs/IO/Button.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/CMakeFiles/ward_carrier-Ext_libs.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Ext_libs/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ward_carrier.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ward_carrier.cbp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +154,7 @@
       <workItem from="1663334724425" duration="546000" />
       <workItem from="1664954844602" duration="87000" />
       <workItem from="1664970245333" duration="12897000" />
+      <workItem from="1665150966430" duration="2652000" />
     </task>
     <task id="LOCAL-00001" summary="small_fix_on_dc_motor">
       <created>1663187391227</created>
@@ -202,10 +202,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="new btn model" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1663245569526">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="279" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1665066863964">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1663245569526" />
+    <state x="279" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1665066863964" />
     <state width="408" height="466" key="DebuggerActiveHint" timestamp="1663253051644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -282,14 +283,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="322" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1663251630376" />
-    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1664979258624">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="688" y="158" key="git4idea.branch.GitSmartOperationDialog" timestamp="1665072626619">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1664979258624" />
-    <state x="486" y="201" key="git4idea.merge.GitPullDialog" timestamp="1664975255164">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="688" y="158" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1665072626619" />
+    <state x="745" y="307" key="git4idea.merge.GitMergeDialog" timestamp="1665072558821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="745" y="307" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1665072558821" />
+    <state x="608" y="254" key="git4idea.merge.GitPullDialog" timestamp="1665053833372">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="486" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1664975255164" />
+    <state x="608" y="254" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1665053833372" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

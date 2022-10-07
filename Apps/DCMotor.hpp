@@ -9,6 +9,8 @@
 
 #define MAX_SPEED_RATIO 1.0
 #define MAX_FREQ_VALUE 500
+#define PULSE_WIDTH_ONLY true
+
 
 struct MotorCfg
 {
@@ -186,19 +188,26 @@ private:
             event = EVENT_STOP;
             callBackOnEvent(this);
     }
-
+    /**
+     * @brief 2 options here
+     * if @PULSE_WIDTH_ONLY - only pulse width will be changed
+     * else freq of modulation will be changed with same 50% pulse width
+     */
     inline void regValueCalc() {
-        auto newCompareValue = (uint32_t)(timerARR * SpeedRatio);
-        if(newCompareValue >= 0 && newCompareValue < UINT16_MAX){
-            __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
-            __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
+        if(PULSE_WIDTH_ONLY){
+            auto newCompareValue = (uint32_t)(timerARR * SpeedRatio);
+            if(newCompareValue >= 0 && newCompareValue < UINT16_MAX){
+                __HAL_TIM_SET_COMPARE(htim, timChannel_l, newCompareValue);
+                __HAL_TIM_SET_COMPARE(htim, timChannel_r, newCompareValue);
+            }
+        }else{
+            auto newARRValue = (uint32_t)(MAX_FREQ_VALUE * SpeedRatio);
+            if(newARRValue > 0 && newARRValue < UINT16_MAX){
+                __HAL_TIM_SET_AUTORELOAD(htim, newARRValue);
+                __HAL_TIM_SET_COMPARE(htim, timChannel_l, newARRValue/2);
+                __HAL_TIM_SET_COMPARE(htim, timChannel_r, newARRValue/2);
+            }
         }
-//        auto newARRValue = (uint32_t)(MAX_FREQ_VALUE * SpeedRatio);
-//        if(newARRValue > 0 && newARRValue < UINT16_MAX){
-//            __HAL_TIM_SET_AUTORELOAD(htim, newARRValue);
-//            __HAL_TIM_SET_COMPARE(htim, timChannel_l, newARRValue/2);
-//            __HAL_TIM_SET_COMPARE(htim, timChannel_r, newARRValue/2);
-//        }
     }
 
     inline void reCalcSpeed(){

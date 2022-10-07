@@ -5,22 +5,17 @@
 #include "Ward_Carrier.hpp"
 
 extern "C"{
-uint32_t adc_values[4] = {0,};
-uint32_t L_HALL_values[2] = {0,};
-uint32_t R_HALL_values[2] = {0,};
+    uint32_t adc_values[4] = {0,};
+    uint32_t L_HALL_values[2] = {0,};
+    uint32_t R_HALL_values[2] = {0,};
 
     Ward_Carrier wardCarrier;
-    using BTN_PIN = PIN<BTN_TYPE, PinReadable>;
-    BTN_PIN FWD_BTN_PIN = BTN_PIN(BTN_FRWD, BTN_FWD_GPIO_Port, BTN_FWD_Pin);
-    BTN_PIN RVS_BTN_PIN = BTN_PIN(BTN_RVRS, BTN_RVS_GPIO_Port, BTN_RVS_Pin);
-    BTN_PIN LEFT_BTN_PIN = BTN_PIN(BTN_LEFT, BTN_LEFT_GPIO_Port, BTN_LEFT_Pin);
-    BTN_PIN RIGHT_BTN_PIN = BTN_PIN(BTN_RIGHT, BTN_RIGHT_GPIO_Port, BTN_RIGHT_Pin);
 
-    Button btn_fwrd = Button(FWD_BTN_PIN);
-    Button btn_rvrs = Button(RVS_BTN_PIN);
-    Button btn_left = Button(LEFT_BTN_PIN);
-    Button btn_right = Button(RIGHT_BTN_PIN);
-//    Button btnArr[4] = {btn_fwrd, btn_rvrs, btn_left, btn_right};
+    using BTN_PIN = PIN<BTN_TYPE, PinReadable>;
+    Button btn_fwrd = Button(BTN_PIN(BTN_FRWD, BTN_FWD_GPIO_Port, BTN_FWD_Pin));
+    Button btn_rvrs = Button(BTN_PIN(BTN_RVRS, BTN_RVS_GPIO_Port, BTN_RVS_Pin));
+    Button btn_left = Button(BTN_PIN(BTN_LEFT, BTN_LEFT_GPIO_Port, BTN_LEFT_Pin));
+    Button btn_right = Button(BTN_PIN(BTN_RIGHT, BTN_RIGHT_GPIO_Port, BTN_RIGHT_Pin));
 
     void EXTI_clear_enable(){
         __HAL_GPIO_EXTI_CLEAR_IT(BTN_LEFT_Pin);
@@ -55,9 +50,9 @@ uint32_t R_HALL_values[2] = {0,};
         wardCarrier.initDevice();
         wardCarrier.getMovController().initMotors(&htim3, &htim4);
         initHALLSensors();
-        wardCarrier.getMovController().setHALLSensors(L_HALL_values, R_HALL_values);
+        wardCarrier.getMovController().setHALLSensorsVars(L_HALL_values, R_HALL_values);
         initADC();
-        wardCarrier.getMovController().setADCSensors(adc_values);
+        wardCarrier.getMovController().setADCSensorsVars(adc_values);
         HAL_TIM_Base_Start_IT(&htim2);
     }
 
@@ -87,11 +82,6 @@ uint32_t R_HALL_values[2] = {0,};
             wardCarrier.getMovController().checkCurrent();
     }
 
-//    void checkAllBtnOff(){
-//        for(auto btn: btnArr)
-//            if(!btn()) btn.setOff();
-//    }
-
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         if(htim->Instance == TIM2){
@@ -108,7 +98,7 @@ uint32_t R_HALL_values[2] = {0,};
     void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
     {
         if(htim->Instance == TIM3 || htim->Instance == TIM4)
-            wardCarrier.motor_refresh(htim);
+            wardCarrier.getMovController().motor_refresh(htim);
     }
 
     void while1_in_mainCpp(){
