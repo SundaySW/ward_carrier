@@ -7,14 +7,18 @@
 
 #include <main.h>
 struct Button{
-    explicit Button(BTN_TYPE incomeType, uint16_t incomeGPIO_Pin): type(incomeType), GPIO_Pin(incomeGPIO_Pin){}
-    const BTN_TYPE type;
-    const uint16_t GPIO_Pin;
+    using BTN_PIN = PIN<BTN_TYPE, PinReadable>;
+    explicit Button(BTN_PIN&& income_Pin): Pin(income_Pin){
+//        Pin.setInverted();
+    }
+    BTN_PIN Pin;
     bool _state = false;
-    inline operator bool() const{return _state;}
-    inline bool operator()() const {return _state;}
-    inline constexpr BTN_TYPE getType(){return type;}
+    inline operator bool() const{return Pin.getValue();}
+    inline bool operator()() const {return Pin.getValue();}
+    inline constexpr BTN_TYPE getType(){return Pin.pinName;}
     inline constexpr bool getState(){return _state;}
+    inline BTN_PIN& getPin(){return Pin;}
+    inline constexpr void setOff(){_state = false;}
     inline void changeState(){_state = !_state;}
 };
 

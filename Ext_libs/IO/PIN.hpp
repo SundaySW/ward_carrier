@@ -40,7 +40,7 @@ public:
 
     template<typename T = InterfaceType>
         requires(std::is_base_of<PinReadable, T>::value)
-    inline LOGIC_LEVEL getValue(){
+    inline constexpr LOGIC_LEVEL getValue() const {
         LOGIC_LEVEL retVal;
         if ((port->IDR & pin) != (uint32_t)LOGIC_LEVEL::LOW) retVal = LOGIC_LEVEL::HIGH;
         else retVal = LOGIC_LEVEL::LOW;

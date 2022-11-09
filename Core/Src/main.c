@@ -19,10 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "adc.h"
 #include "dma.h"
-#include "fdcan.h"
-#include "i2c.h"
 #include "tim.h"
 #include "gpio.h"
 
@@ -55,8 +52,7 @@
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 extern void while1_in_mainCpp();
-extern void EXTI_clear_enable();
-extern void initDevice();
+extern void initPerf();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -91,20 +87,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM1_Init();
   MX_TIM7_Init();
   MX_TIM6_Init();
   MX_TIM4_Init();
-  MX_ADC1_Init();
-  MX_ADC2_Init();
-  MX_FDCAN1_Init();
-  MX_I2C2_Init();
   MX_TIM3_Init();
   MX_DMA_Init();
   MX_TIM8_Init();
+  MX_TIM2_Init();
+  MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
-    EXTI_clear_enable();
-    initDevice();
+  initPerf();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -127,7 +119,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Configure the main internal regulator output voltage
   */
@@ -159,17 +150,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Initializes the peripherals clocks
-  */
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C2|RCC_PERIPHCLK_ADC12
-                              |RCC_PERIPHCLK_FDCAN;
-  PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_PCLK1;
-  PeriphClkInit.FdcanClockSelection = RCC_FDCANCLKSOURCE_PCLK1;
-  PeriphClkInit.Adc12ClockSelection = RCC_ADC12CLKSOURCE_SYSCLK;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
