@@ -6,7 +6,7 @@
 #define WARD_WHEELER_WARDWHEELER_HPP
 
 #include <PIN.hpp>
-#include <adc.h>
+//#include <adc.h>
 #include "main.h"
 #include "DCMotor.hpp"
 #include "Button.hpp"
@@ -14,12 +14,12 @@
 #include "MovementController.hpp"
 
 static inline void delay(uint32_t delay){
-    __HAL_TIM_DISABLE_IT(&htim1, TIM_IT_UPDATE);
+//    __HAL_TIM_DISABLE_IT(&htim1, TIM_IT_UPDATE);
     HAL_TIM_Base_Start(&htim6);
     TIM6->CNT = 0;
     while(TIM6->CNT < delay){}
     HAL_TIM_Base_Stop(&htim6);
-    __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
+//    __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_UPDATE);
 }
 
 class Ward_Carrier {
